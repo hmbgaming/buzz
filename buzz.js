@@ -23,7 +23,6 @@ function uptime(message) {
   message.delete()
 }
 
-
 bot.on('ready', () => {
   console.log('buzz-bot-initalized');
   load_buzzwords();
@@ -42,12 +41,13 @@ bot.on('message', (message) => {
 
   if (message.content.indexOf('!') === 0) {
     var option = message.content.substring(1).split(' ');
-    if (option[0] == 'join') {}
+    if (option[0] == 'join') {role.join(conf, message, option)}
+    if (option[0] == 'quit') {role.leave(conf, message, option)}
 
-
-    if (message.member.roles.some(r=>["buzz admin"].includes(r.name))) { // Admin Commands
+    if (message.member.roles.some(r=>[conf['admin-role']].includes(r.name))) { // Admin Commands
       if (option[0] == 'uptime') {uptime(message)}
 
+    message.delete();
   }}
 });
 
