@@ -44,6 +44,9 @@ bot.on('message', (message) => {
     if (option[0] == 'join') {role.join(conf, message, option)}
     if (option[0] == 'quit') {role.leave(conf, message, option)}
 
+    if (option[0] == 'create') {role.create(conf, message, option)}
+
+
     if (message.member.roles.some(r=>[conf['admin-role']].includes(r.name))) { // Admin Commands
       if (option[0] == 'uptime') {uptime(message)}
 
