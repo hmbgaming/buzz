@@ -8,6 +8,8 @@ const Buzzwords = {};
 const role = require('./buzzBlocks/group_notification/role.js');
 const help = require('./buzzBlocks/help/help.js');
 
+const poll = require('./buzzBlocks/communityPolls/poll.js');
+
 function load_buzzwords() {
   for (var buzzword in buzzFile) {
     var construct_reply = '\n';
@@ -43,16 +45,16 @@ bot.on('message', (message) => {
   if (message.author.bot) {return;}
   if (message.isMentioned(bot.user) || message.channel.type === 'dm') {
     check_buzzwords(message);
-
-    //
-
     if (message.content.includes('help')){help.display(conf, Buzzwords, message)}
 
-    //
   }
 
   if (message.content.indexOf('!') === 0) {
     var option = message.content.substring(1).split(' ');
+
+//
+    //poll.handler(option);
+//
 
     if (conf['game-role']) {role.handler(conf, message, option)}
 
