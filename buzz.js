@@ -5,6 +5,8 @@ const bot = new Discord.Client();
 const buzzFile = require('./buzzwords.json');
 const Buzzwords = {};
 
+const role = require('./buzzBlocks/game_roles/role.js');
+
 function load_buzzwords() {
   for (var buzzword in buzzFile) {
     var construct_reply = '\n';
@@ -16,12 +18,20 @@ function check_buzzwords(message) {
     if (message.content.includes(word)) {message.author.send(Buzzwords[word])}
   }}
 
+function uptime(message) {
+  message.author.send(((bot.uptime/1000.0)/60).toFixed(2)+" minutes!");
+  message.delete()
+}
+
 
 bot.on('ready', () => {
   console.log('buzz-bot-initalized');
   load_buzzwords();
 });
 
+bot.on("guildMemberAdd", (member) => {
+  console.log('new-user-event')
+});
 
 bot.on('message', (message) => {
   if (message.author.bot) {return;}
@@ -30,8 +40,15 @@ bot.on('message', (message) => {
 
   }
 
-  if (message.content.indexOf('!') === 0) {} // Admin Commands
-});
+  if (message.content.indexOf('!') === 0) {
+    var option = message.content.substring(1).split(' ');
+    if (option[0] == 'join') {}
 
+
+    if (message.member.roles.some(r=>["buzz admin"].includes(r.name))) { // Admin Commands
+      if (option[0] == 'uptime') {uptime(message)}
+
+  }}
+});
 
 bot.login(conf['discord-token']);

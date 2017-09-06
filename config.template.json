@@ -1,3 +1,4 @@
 {
-  "discord-token":"discord-api-token"
+  "discord-token": "discord-api-token",
+     "admin-role": "admin"
 }
