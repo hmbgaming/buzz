@@ -60,3 +60,8 @@ typings/
 #vscode configuration
 .vscode
 
+# JetBrains
+.idea
+
+# Cloud9 IDE
+.c9
