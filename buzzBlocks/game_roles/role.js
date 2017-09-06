@@ -39,17 +39,20 @@ function create(conf, message, option) {
 function remove(conf, message, option) {
   var role = ''; for (i=1; i < option.length; i++) {role += option[i]+' '};
   var server_role = message.guild.roles.find("name", role.slice(0, -1));
+
+  if (role.slice(0, -1) === conf['admin-role'] || message.member.roles.some(r=>[conf['admin-role']].includes(r.name)) === false) {return;}
+  if (server_role === null) {return;}
   server_role.delete()
-  .then(r => console.log(`Deleted role ${r}`))
-  .catch(console.error);
+    .catch(console.error);
+  message.author.send('You have removed ' + role.slice(0, -1) + '!');
 
 }
+
 module.exports = {
   handler: function(conf, message, option) {
     if (option[0] == 'join') {join(conf, message, option)}
     if (option[0] == 'quit') {leave(conf, message, option)}
     if (option[0] == 'create') {create(conf, message, option)}
-
     if (option[0] == 'remove') {remove(conf, message, option)}
   }
 };
