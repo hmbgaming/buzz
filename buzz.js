@@ -29,7 +29,7 @@ bot.on('ready', () => {
 });
 
 bot.on("guildMemberAdd", (member) => {
-  console.log('new-user-event')
+  member.send(Buzzwords['new-server-member'])
 });
 
 bot.on('message', (message) => {

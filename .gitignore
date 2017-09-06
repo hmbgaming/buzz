@@ -1,12 +1,3 @@
 
-# App specific
 config.json
-
-# Node.js
 /node_modules
-
-# JetBrains
-.idea
-
-# Cloud9 IDE
-.c9
