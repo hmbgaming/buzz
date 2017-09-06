@@ -1,0 +1,7 @@
+{
+  "discord-token": "discord-api-token",
+     "admin-role": "admin",
+
+     "game-role": true,
+     "game-role-color": "0xFF0000"
+}
