@@ -3,9 +3,9 @@
 
 
 
-# nodkp
+# Buzz
 
-> Discord DKP management bot.
+> Holdmybeer Discord Bot
 
 ##### Run Locally
 1. Clone repository
