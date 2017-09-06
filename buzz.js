@@ -5,7 +5,8 @@ const bot = new Discord.Client();
 const buzzFile = require('./buzzwords.json');
 const Buzzwords = {};
 
-const role = require('./buzzBlocks/game_roles/role.js');
+const role = require('./buzzBlocks/group_notification/role.js');
+const help = require('./buzzBlocks/help/help.js');
 
 function load_buzzwords() {
   for (var buzzword in buzzFile) {
@@ -29,7 +30,13 @@ bot.on('ready', () => {
 });
 
 bot.on("guildMemberAdd", (member) => {
-  member.send(Buzzwords['new-server-member'])
+  member.send(Buzzwords['new-servermember-message'])
+});
+
+bot.on("presenceUpdate", (userold, usernew) => {
+  if (userold.presence.status === 'offline' && usernew.presence.status === 'online') {
+    usernew.send(Buzzwords['motd'])
+  }
 });
 
 bot.on('message', (message) => {
@@ -37,6 +44,11 @@ bot.on('message', (message) => {
   if (message.isMentioned(bot.user) || message.channel.type === 'dm') {
     check_buzzwords(message);
 
+    //
+
+    if (message.content.includes('help')){help.display(conf, Buzzwords, message)}
+
+    //
   }
 
   if (message.content.indexOf('!') === 0) {
