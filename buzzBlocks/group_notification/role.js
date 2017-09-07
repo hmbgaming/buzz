@@ -5,6 +5,7 @@ function join(conf, message, option) {
 
   if (server_role === null || role.slice(0, -1) === conf['admin-role']) {return;}
   if (message.member.roles.has(server_role.id)) {return;}
+  if (conf['exclude-roles'].indexOf(role.slice(0, -1)) === 0) {return;}
 
   message.member.addRole(server_role);
   message.author.send('You have joined ' + role.slice(0, -1) + '!');
@@ -42,6 +43,8 @@ function remove(conf, message, option) {
 
   if (role.slice(0, -1) === conf['admin-role'] || message.member.roles.some(r=>[conf['admin-role']].includes(r.name)) === false) {return;}
   if (server_role === null) {return;}
+  if (conf['exclude-roles'].indexOf(role.slice(0, -1)) === 0) {return;}
+
   server_role.delete()
     .catch(console.error);
   message.author.send('You have removed ' + role.slice(0, -1) + '!');
@@ -50,9 +53,9 @@ function remove(conf, message, option) {
 
 module.exports = {
   handler: function(conf, message, option) {
-    if (option[0] == 'join') {join(conf, message, option)}
-    if (option[0] == 'quit') {leave(conf, message, option)}
-    if (option[0] == 'create') {create(conf, message, option)}
-    if (option[0] == 'remove') {remove(conf, message, option)}
+    if (option[0] == 'join') {join(conf, message, option); message.delete()}
+    if (option[0] == 'quit') {leave(conf, message, option); message.delete()}
+    if (option[0] == 'create') {create(conf, message, option); message.delete()}
+    if (option[0] == 'remove') {remove(conf, message, option); message.delete()}
   }
 };

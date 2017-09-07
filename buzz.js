@@ -58,10 +58,9 @@ bot.on('message', (message) => {
     if (conf['game-role']) {role.handler(conf, message, option)}
 
     if (message.member.roles.some(r=>[conf['admin-role']].includes(r.name))) { // Admin Commands
-      if (option[0] == 'uptime') {uptime(message)}
+      if (option[0] == 'uptime') {uptime(message); message.delete()}
 
-    message.delete();
-  }} else {message.author.send('You are either not an admin or are using server commands in DM!')}
+  }}
 });
 
 
