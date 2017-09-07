@@ -1,0 +1,12 @@
+{
+  "discord-token":"api-token",
+  "admin-role": "buzz admin",
+
+
+  "game-role": true,
+  "game-role-color": "0xFF0000",
+  "exclude-roles": [
+    "Angry Birds"
+  ]
+
+}

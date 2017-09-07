@@ -5,7 +5,10 @@ const bot = new Discord.Client();
 const buzzFile = require('./buzzwords.json');
 const Buzzwords = {};
 
-const role = require('./buzzBlocks/game_roles/role.js');
+const role = require('./buzzBlocks/group_notification/role.js');
+const help = require('./buzzBlocks/help/help.js');
+
+const poll = require('./buzzBlocks/communityPolls/poll.js');
 
 function load_buzzwords() {
   for (var buzzword in buzzFile) {
@@ -20,7 +23,6 @@ function check_buzzwords(message) {
 
 function uptime(message) {
   message.author.send(((bot.uptime/1000.0)/60).toFixed(2)+" minutes!");
-  message.delete()
 }
 
 bot.on('ready', () => {
@@ -29,26 +31,39 @@ bot.on('ready', () => {
 });
 
 bot.on("guildMemberAdd", (member) => {
-  member.send(Buzzwords['new-server-member'])
+  member.send(Buzzwords['new-servermember-message'])
+});
+
+bot.on("presenceUpdate", (userold, usernew) => {
+  if (userold.presence.status === 'offline' && usernew.presence.status === 'online') {
+    usernew.send(Buzzwords['motd'])
+  }
 });
 
 bot.on('message', (message) => {
   if (message.author.bot) {return;}
   if (message.isMentioned(bot.user) || message.channel.type === 'dm') {
     check_buzzwords(message);
+    if (message.content.includes('help')){help.display(conf, Buzzwords, message)}
 
   }
 
-  if (message.content.indexOf('!') === 0) {
+  if (message.content.indexOf('!') === 0 && message.channel.type === 'text') {
     var option = message.content.substring(1).split(' ');
+
+//
+    //poll.handler(option);
+//
 
     if (conf['game-role']) {role.handler(conf, message, option)}
 
     if (message.member.roles.some(r=>[conf['admin-role']].includes(r.name))) { // Admin Commands
-      if (option[0] == 'uptime') {uptime(message)}
+      if (option[0] == 'uptime') {uptime(message); message.delete()}
+      if (option[0] == 'buzz-admin-shutdown') {process.exit()}
 
-    message.delete();
   }}
 });
 
-bot.login(conf['discord-token']);
+
+var discord_api_token = process.env.DISCORD_TOKEN || conf['discord-token']
+bot.login(discord_api_token);

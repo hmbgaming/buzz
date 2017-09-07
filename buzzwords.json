@@ -1,5 +1,9 @@
 {
-  "new-server-member": [
+  "motd": [
+    "Generic Message of the Day!"
+  ],
+  
+  "new-servermember-message": [
     "Generic Welcome Message!"
   ],
 

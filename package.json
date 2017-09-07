@@ -4,7 +4,7 @@
   "description": "Hold My Beer Discord Bot",
   "main": "buzz.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node buzz"
   },
   "author": "Softban",
   "license": "ISC",
