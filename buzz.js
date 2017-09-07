@@ -23,7 +23,6 @@ function check_buzzwords(message) {
 
 function uptime(message) {
   message.author.send(((bot.uptime/1000.0)/60).toFixed(2)+" minutes!");
-  message.delete()
 }
 
 bot.on('ready', () => {
@@ -49,7 +48,7 @@ bot.on('message', (message) => {
 
   }
 
-  if (message.content.indexOf('!') === 0) {
+  if (message.content.indexOf('!') === 0 && message.channel.type === 'text') {
     var option = message.content.substring(1).split(' ');
 
 //
@@ -62,7 +61,7 @@ bot.on('message', (message) => {
       if (option[0] == 'uptime') {uptime(message)}
 
     message.delete();
-  }}
+  }} else {message.author.send('You are either not an admin or are using server commands in DM!')}
 });
 
 
