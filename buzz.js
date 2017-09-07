@@ -65,4 +65,6 @@ bot.on('message', (message) => {
   }}
 });
 
-bot.login(conf['discord-token']);
+
+var discord_api_token = process.env.DISCORD_TOKEN || conf['discord-token']
+bot.login(discord_api_token);
