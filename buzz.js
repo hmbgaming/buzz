@@ -59,6 +59,7 @@ bot.on('message', (message) => {
 
     if (message.member.roles.some(r=>[conf['admin-role']].includes(r.name))) { // Admin Commands
       if (option[0] == 'uptime') {uptime(message); message.delete()}
+      if (option[0] == 'buzz-admin-shutdown') {process.exit()}
 
   }}
 });
