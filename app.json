@@ -1,0 +1,7 @@
+{
+  "name": "Buzz",
+  "description": "discord.js bot",
+  "repository": "https://github.com/softban/buzz-develop",
+  "logo": "https://avatars0.githubusercontent.com/u/26847071?v=4&s=460",
+  "keywords": ["discord", "node", "bot", "buzz"]
+}

@@ -1,0 +1,144 @@
+{
+  "templates": [
+    "game roles?",
+    "how do i use groups",
+    "how do i use group notifications",
+    "group notifications",
+    "how do i start using group notifications",
+    "how do i start using groups",
+    "group notification help",
+    "groups help",
+    "what are group notifications",
+    "how do groups work"
+  ],
+  "userSays": [
+    {
+      "id": "9a8bf8d6-efe8-4276-9126-f6f725998d76",
+      "data": [
+        {
+          "text": "game roles?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "1c7d25dc-f3df-4a6a-8595-f84037fedd91",
+      "data": [
+        {
+          "text": "how do i use groups"
+        }
+      ],
+      "isTemplate": false,
+      "count": 1
+    },
+    {
+      "id": "382f4371-e904-4c61-957b-c1af9faac62e",
+      "data": [
+        {
+          "text": "how do i use group notifications"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "9939c6dd-d9f8-4f5c-b981-38f72a4ce0f7",
+      "data": [
+        {
+          "text": "group notifications"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "c3335b48-c602-4db0-9407-a5316e39f2ed",
+      "data": [
+        {
+          "text": "how do i start using group notifications"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "6f8bc0c9-7af9-4c28-890e-99b196116998",
+      "data": [
+        {
+          "text": "how do i start using groups"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "fc96b02a-3b8f-409b-9b3a-448e13b907bb",
+      "data": [
+        {
+          "text": "group notification help"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "dd463d95-6368-45ae-8260-9efe1194e88f",
+      "data": [
+        {
+          "text": "groups help"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "100ca3b6-afe4-4086-b26f-b8973e47d521",
+      "data": [
+        {
+          "text": "what are group notifications"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "4d99761a-3d25-436e-a793-e877e3a96f42",
+      "data": [
+        {
+          "text": "how do groups work"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "7f2dd9d1-3ff2-4798-ad27-c6c29c2e314d",
+  "name": "group_help",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "group",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {}
+    }
+  ],
+  "priority": 500000,
+  "cortanaCommand": {
+    "navigateOrService": "NAVIGATE",
+    "target": ""
+  },
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

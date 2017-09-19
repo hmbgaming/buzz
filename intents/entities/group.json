@@ -1,0 +1,99 @@
+{
+  "id": "9b921586-dbdc-47df-a129-7a62c13dcb81",
+  "name": "group",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "World of Warcraft",
+      "synonyms": [
+        "World of Warcraft",
+        "wow",
+        "world of warcraft"
+      ]
+    },
+    {
+      "value": "Guild Wars 2",
+      "synonyms": [
+        "Guild Wars 2",
+        "guild wars 2",
+        "gw2"
+      ]
+    },
+    {
+      "value": "Hearthstone",
+      "synonyms": [
+        "Hearthstone",
+        "hearthstone"
+      ]
+    },
+    {
+      "value": "League of Legends",
+      "synonyms": [
+        "League of Legends",
+        "lol",
+        "LoL",
+        "league of legends"
+      ]
+    },
+    {
+      "value": "Playerunknown's Battlegrounds",
+      "synonyms": [
+        "Playerunknown's Battlegrounds",
+        "playerunknown",
+        "pubg"
+      ]
+    },
+    {
+      "value": "Rust",
+      "synonyms": [
+        "Rust",
+        "rust"
+      ]
+    },
+    {
+      "value": "Vainglory",
+      "synonyms": [
+        "Vainglory",
+        "vainglory"
+      ]
+    },
+    {
+      "value": "Final Fantasy XIV",
+      "synonyms": [
+        "Final Fantasy XIV",
+        "final fantasy XIV",
+        "ffxiv"
+      ]
+    },
+    {
+      "value": "Clash Royale",
+      "synonyms": [
+        "Clash Royale",
+        "clash royale"
+      ]
+    },
+    {
+      "value": "Battle Bay",
+      "synonyms": [
+        "Battle Bay",
+        "battle bay"
+      ]
+    },
+    {
+      "value": "Minecraft",
+      "synonyms": [
+        "Minecraft",
+        "minecraft"
+      ]
+    },
+    {
+      "value": "Destiny 2",
+      "synonyms": [
+        "Destiny 2",
+        "destiny 2"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": false
+}

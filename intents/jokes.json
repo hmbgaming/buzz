@@ -1,0 +1,141 @@
+{
+  "templates": [
+    "jokes",
+    "lets hear a joke",
+    "what jokes do you know",
+    "have any good jokes",
+    "joke",
+    "i want to hear a joke",
+    "tell me a joke"
+  ],
+  "userSays": [
+    {
+      "id": "7df29c84-e443-4749-a713-e9c029aea8e4",
+      "data": [
+        {
+          "text": "jokes"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "de656a95-4bad-4bb5-bc0c-85e2f78f3162",
+      "data": [
+        {
+          "text": "lets hear a joke"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "f74ebe86-e791-4d01-a573-d3c504a0fcb9",
+      "data": [
+        {
+          "text": "what jokes do you know"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "fe8c430c-2744-4396-805c-5858658120ec",
+      "data": [
+        {
+          "text": "have any good jokes"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "d1d2b02d-dc85-463c-8be6-ac09fcdff783",
+      "data": [
+        {
+          "text": "joke"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "27be8575-8ae2-465d-a120-7a0c70f0c41d",
+      "data": [
+        {
+          "text": "i want to hear a joke"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "8fbdd86f-11b0-462c-806c-a0dcdfccc1e7",
+      "data": [
+        {
+          "text": "tell me a joke"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "0878a616-6384-4a41-8d81-8cf6b39e9f01",
+  "name": "jokes",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "speech": [
+            "RIP boiling water. You will be mist.",
+            "So what if I can’t spell Armageddon? It’s not the end of the world",
+            "I lost my job at the bank on my very first day. – A woman asked me to check her balance, so I pushed her over.",
+            "How does Moses prepare his tea? – Hebrews it.",
+            "Did you hear about the man who was accidentally buried alive? – It was a grave mistake.",
+            "Confucius say, man who runs behind car will get exhausted, but man who runs in front of car will get tired.",
+            "Today someone was killed with a starter pistol. Police think it might be race related.",
+            "I had to clean out my spice rack and found everything was too old and had to be thrown out. – What a waste of thyme.",
+            "Two windmills are standing in a field and one asks the other, “What kind of music do you like?” – The other says, “I’m a big metal fan.”",
+            "A prisoner was told how he’ll be executed. Needless to say, he was shocked.",
+            "Why do cows have hooves instead of feet? – Because they lactose.",
+            "6:30 is the best time on a clock… hands down.",
+            "What do you say to your sister when she’s crying? – “Are you having a crisis?”",
+            "“How is your long distance relationship going?” – “So far, so good.”",
+            "What is the best thing about living in Switzerland? – Well, the flag is a big plus.",
+            "I was raped by a group of mimes. They did unspeakable things to me.",
+            "What’s the difference between a hippo and a Zippo? – One is really heavy, and the other is a little lighter.",
+            "Accordion to a recent survey, replacing words with the names of musical instruments in a sentence often goes undetected.",
+            "An atom loses an electron… It says, “Man, I really gotta keep an ion them.”",
+            "I tried to sue the airport for misplacing my luggage. – I lost my case.",
+            "I once ate a watch. It was time consuming.",
+            "What’s the difference between a snowman and a snowwoman?\n\nSnowballs.",
+            "Two deer walk out of a gay bar. One of them turns to the other and says, “I can’t believe I blew forty bucks in there.”",
+            "The past, the present, and the future walk into a bar…\n\nIt was tense.",
+            "What do you call 100 rabbits walking backwards?\n\nA receding hare line.",
+            "I was very lonely so I bought some shares. – It’s nice to have a bit of company.",
+            "How does NASA organize a party? – They planet.",
+            "What did the Indian boy say to his mother as he left for school? – Mumbai!",
+            "I hate how funerals are always at 9 a.m. – I’m not really a mourning person.",
+            "My boyfriend came over today and stole my milk. How dairy."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {}
+    }
+  ],
+  "priority": 500000,
+  "cortanaCommand": {
+    "navigateOrService": "NAVIGATE",
+    "target": ""
+  },
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

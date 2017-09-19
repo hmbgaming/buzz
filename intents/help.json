@@ -1,0 +1,89 @@
+{
+  "templates": [
+    "how do i use you",
+    "how do i this",
+    "help",
+    "i need help",
+    "help me"
+  ],
+  "userSays": [
+    {
+      "id": "f89af42f-724f-401f-bee9-006122b1cc13",
+      "data": [
+        {
+          "text": "how do i use you"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "5739f6c0-cfcc-44a2-a3f3-151b3a3dc2ad",
+      "data": [
+        {
+          "text": "how do i this"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "3d53ad82-30e6-4763-a56a-55e0f0afafee",
+      "data": [
+        {
+          "text": "help"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "ec5f818f-e31b-4d9f-bab6-d71225d1438d",
+      "data": [
+        {
+          "text": "i need help"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "6c1ff331-e066-4623-a5ad-88040e900751",
+      "data": [
+        {
+          "text": "help me"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "7dfc0fa4-d8ab-4453-914a-2c454774c265",
+  "name": "help",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "fallback",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "Hello! I'm still in development, but you can ask me about any of these topics.\n\nGroup Notifications, you can join game roles to send and receive games specific mentions!"
+        }
+      ],
+      "defaultResponsePlatforms": {}
+    }
+  ],
+  "priority": 500000,
+  "cortanaCommand": {
+    "navigateOrService": "NAVIGATE",
+    "target": ""
+  },
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

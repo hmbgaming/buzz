@@ -1,12 +1,44 @@
 {
-  "discord-token":"api-token",
+  "discord-token": "api-token",
+  "api-ai-token": "api-token",
   "admin-role": "buzz admin",
 
 
-  "game-role": true,
-  "game-role-color": "0xFF0000",
+  "group_notification": true,
+  "group-color": "44b8fa",
   "exclude-roles": [
-    "Angry Birds"
-  ]
+    "Brewmasters"
+  ],
+  "group_roles": [
+    "World of Warcraft",
+    "Guild Wars 2",
+    "Hearthstone",
+    "League of Legends",
+    "Playerunknown's Battlegrounds",
+    "Rust",
+    "Vainglory",
+    "Final Fantasy XIV",
+    "Clash Royale",
+    "Battle Bay",
+    "Minecraft",
+    "Destiny 2"
+  ],
+
+  "level-cap": 30,
+  "level-ranks": {
+    "reactions-rank": 5,
+    "mute-members-rank": 6,
+    "deafen-members-rank": 7,
+    "change-your-nickname-rank": 8,
+    "memes-chat-rank": 9,
+    "2x-voting-power-rank": 10,
+    "deals-chat-rank": 11,
+    "members-role-rank": 12,
+    "custom-emoji-rank": 13,
+    "gotm-submissions-rank": 14,
+    "x5-voting-power-rank": 15,
+    "vip-chat-rank": 16,
+    "hmb-swag-rank": 20
+  }
 
 }

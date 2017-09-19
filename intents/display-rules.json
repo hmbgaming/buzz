@@ -1,0 +1,122 @@
+{
+  "templates": [
+    "i don't want to know the fucking rules",
+    "i want to know the rules",
+    "fuck rules",
+    "tell me the rules",
+    "dude tell me the rules",
+    "i heard there are rules",
+    "rules",
+    "what are the rules"
+  ],
+  "userSays": [
+    {
+      "id": "7401bd61-7b11-476d-8f77-debb3b4b2ce2",
+      "data": [
+        {
+          "text": "i don't want to know the fucking rules"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "c2ef3fb0-4dde-465e-b73a-202810d20bac",
+      "data": [
+        {
+          "text": "i want to know the rules"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "c278ad6f-b4ee-432f-843f-1720b8be1c79",
+      "data": [
+        {
+          "text": "fuck rules"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "a6fc248d-17f6-4e1a-bb9f-2465f744f891",
+      "data": [
+        {
+          "text": "tell me the rules"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "2ee2ae44-1a49-4a4f-af7c-9bdf32c51f79",
+      "data": [
+        {
+          "text": "dude tell me the rules"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "93aa3258-f168-4aac-840f-b3f085f6a05d",
+      "data": [
+        {
+          "text": "i heard there are rules"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "7423fa7c-bfc1-4e34-a9ba-d279862645f4",
+      "data": [
+        {
+          "text": "rules"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "8009a071-19e2-496c-9cf8-fb0da143fb5c",
+      "data": [
+        {
+          "text": "what are the rules"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "f9515314-ebbd-4d8a-9706-541671bbee44",
+  "name": "display-rules",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "rules",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {}
+    }
+  ],
+  "priority": 500000,
+  "cortanaCommand": {
+    "navigateOrService": "NAVIGATE",
+    "target": ""
+  },
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

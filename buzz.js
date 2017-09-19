@@ -1,69 +1,63 @@
+const fs = require('fs');
+const discord = require('discord.js');
+const api_ai = require('apiai');
+
 const conf = require('./config.json');
-const Discord = require('discord.js');
+const admin = require('./blocks/admin.js');
+const groups = require('./blocks/groups.js');
+const rules = require('./blocks/rules.js');
+const level = require('./blocks/level.js');
 
-const bot = new Discord.Client();
-const buzzFile = require('./buzzwords.json');
-const Buzzwords = {};
+const discord_api_token = process.env.DISCORD_TOKEN || conf['discord-token'];
+const ai = api_ai(process.env.APIAI_TOKEN || conf['api-ai-token']);
 
-const role = require('./buzzBlocks/group_notification/role.js');
-const help = require('./buzzBlocks/help/help.js');
+const bot = new discord.Client();
 
-const poll = require('./buzzBlocks/communityPolls/poll.js');
+function handler(message) {
+  let request = ai.textRequest(message.content, {sessionId: message.author.username});
+  request.on('response', function(response) {
+    let discord_response = response['result']['fulfillment']['speech'];
 
-function load_buzzwords() {
-  for (var buzzword in buzzFile) {
-    var construct_reply = '\n';
-    for (var line in buzzFile[buzzword]) {construct_reply += (buzzFile[buzzword][line] + '\n');}
-    Buzzwords[buzzword]=construct_reply;
-  }}
-function check_buzzwords(message) {
-  for (var word in Buzzwords) {
-    if (message.content.includes(word)) {message.author.send(Buzzwords[word])}
-  }}
+    if (response['result']['actionIncomplete']) {message.author.send(discord_response).catch(function(){});}
+    if (response['result']['actionIncomplete'] === false) {
+      let intent = response['result']['metadata']['intentName'];
 
-function uptime(message) {
-  message.author.send(((bot.uptime/1000.0)/60).toFixed(2)+" minutes!");
+
+      if (response['result']['action'] === 'group') {groups.handler(conf, message, intent, discord_response); return}
+      if (response['result']['action'] === 'rules') {rules.handler(message); return}
+
+      message.author.send(discord_response); return;
+    }
+  });
+
+  request.on('error', function(error) {console.log(error)});
+  request.end();
 }
+
 
 bot.on('ready', () => {
   console.log('buzz-bot-initalized');
-  load_buzzwords();
 });
-
 bot.on("guildMemberAdd", (member) => {
-  member.send(Buzzwords['new-servermember-message'])
+  console.log('new-server-member');
 });
-
 bot.on("presenceUpdate", (userold, usernew) => {
   if (userold.presence.status === 'offline' && usernew.presence.status === 'online') {
-    usernew.send(Buzzwords['motd'])
+    console.log('presence-update');
   }
 });
-
 bot.on('message', (message) => {
   if (message.author.bot) {return;}
-  if (message.isMentioned(bot.user) || message.channel.type === 'dm') {
-    check_buzzwords(message);
-    if (message.content.includes('help')){help.display(conf, Buzzwords, message)}
+  if (message.content.startsWith('!')) {
+    var option = message.content.split(' ')
+    if (option[0] === '!uptime') {admin.uptime(conf, bot, message)}
+    if (option[0] === '!sync')   {admin.sync(conf, message)}
 
+    return;
   }
 
-  if (message.content.indexOf('!') === 0 && message.channel.type === 'text') {
-    var option = message.content.substring(1).split(' ');
+  if (message.isMentioned(bot.user)) {handler(message)}
+  level.handler(conf, message);
 
-//
-    //poll.handler(option);
-//
-
-    if (conf['game-role']) {role.handler(conf, message, option)}
-
-    if (message.member.roles.some(r=>[conf['admin-role']].includes(r.name))) { // Admin Commands
-      if (option[0] == 'uptime') {uptime(message); message.delete()}
-      if (option[0] == 'buzz-admin-shutdown') {process.exit()}
-
-  }}
 });
-
-
-var discord_api_token = process.env.DISCORD_TOKEN || conf['discord-token']
 bot.login(discord_api_token);

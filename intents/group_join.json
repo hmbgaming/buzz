@@ -1,0 +1,122 @@
+{
+  "templates": [
+    "joining groups",
+    "can i join a group?",
+    "i would like to join a group.",
+    "how do i join a group?",
+    "i would like to join @group:group ",
+    "join @group:group "
+  ],
+  "userSays": [
+    {
+      "id": "374405c5-22f7-410e-a5fd-fc6e3cf44e54",
+      "data": [
+        {
+          "text": "joining groups"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "206f8609-d912-4601-9dc4-1d3341e8c6a3",
+      "data": [
+        {
+          "text": "can i join a group?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "44c7fd1f-a547-45af-a3e5-29c49b158949",
+      "data": [
+        {
+          "text": "i would like to join a group."
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "be357212-1caf-4f4d-94fc-4528c0c22c50",
+      "data": [
+        {
+          "text": "how do i join a group?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "3065ae4c-f2d7-4c0e-887a-75e21ab4e946",
+      "data": [
+        {
+          "text": "i would like to join "
+        },
+        {
+          "text": "$group",
+          "alias": "group",
+          "meta": "@group",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "e33eb958-5a84-4169-ab47-f6cae0a84b61",
+      "data": [
+        {
+          "text": "join "
+        },
+        {
+          "text": "$group",
+          "alias": "group",
+          "meta": "@group",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "821d8000-d744-45d6-bf3a-95ae121be4ec",
+  "name": "group_join",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "group",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "required": true,
+          "dataType": "@group",
+          "name": "group",
+          "value": "$group",
+          "prompts": [
+            "Which group would you like to join?"
+          ]
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "$group"
+        }
+      ],
+      "defaultResponsePlatforms": {}
+    }
+  ],
+  "priority": 500000,
+  "cortanaCommand": {
+    "navigateOrService": "NAVIGATE",
+    "target": ""
+  },
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

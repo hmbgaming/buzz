@@ -1,0 +1,196 @@
+{
+  "templates": [
+    "how do i remove a group",
+    "how do i leave groups",
+    "how do i leave a group",
+    "remove @group:group ",
+    "can you show me how to quit a group?",
+    "how do i quit a group?",
+    "I would like to quit a group",
+    "i would like to quit @group:group ",
+    "i would like to leave @group:group ",
+    "leave @group:group ",
+    "quit @group:group "
+  ],
+  "userSays": [
+    {
+      "id": "62144ead-abd7-474b-b684-e171352de0ca",
+      "data": [
+        {
+          "text": "how do i remove a group"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "ece79358-5a66-4a90-9d87-bd018fec5aa7",
+      "data": [
+        {
+          "text": "how do i leave groups"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "7ffb520a-28a2-48a0-81bc-34f0d3c93e7f",
+      "data": [
+        {
+          "text": "how do i leave a group"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "179e8bf3-7054-4931-9ff8-cc46c06e5119",
+      "data": [
+        {
+          "text": "remove "
+        },
+        {
+          "text": "$group",
+          "alias": "group",
+          "meta": "@group",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "d286d306-2fa6-47a0-8888-f9756c6f7c74",
+      "data": [
+        {
+          "text": "can you show me how to quit a group?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "63db669e-3c64-436c-a456-3fbfdd1817e6",
+      "data": [
+        {
+          "text": "how do i quit a group?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "35ea4800-39ba-4008-a6ad-75467be30ec3",
+      "data": [
+        {
+          "text": "I would like to quit a group"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "387c9398-149a-47fb-8386-96d599adc171",
+      "data": [
+        {
+          "text": "i would like to quit "
+        },
+        {
+          "text": "$group",
+          "alias": "group",
+          "meta": "@group",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "b025169d-0eab-40e2-aa3f-7efd8802137d",
+      "data": [
+        {
+          "text": "i would like to leave "
+        },
+        {
+          "text": "$group",
+          "alias": "group",
+          "meta": "@group",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "23f2827c-d29e-4c6f-b1fd-88d532756836",
+      "data": [
+        {
+          "text": "leave "
+        },
+        {
+          "text": "$group",
+          "alias": "group",
+          "meta": "@group",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "4b98dbfd-d505-4e03-bc67-eb78af7d6b01",
+      "data": [
+        {
+          "text": "quit "
+        },
+        {
+          "text": "$group",
+          "alias": "group",
+          "meta": "@group",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "1a1b5a5b-5112-4bae-961c-b23e110c8041",
+  "name": "group_quit",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "group",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "required": true,
+          "dataType": "@group",
+          "name": "group",
+          "value": "$group",
+          "prompts": [
+            "Which group would you like to leave?"
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "$group"
+        }
+      ],
+      "defaultResponsePlatforms": {}
+    }
+  ],
+  "priority": 500000,
+  "cortanaCommand": {
+    "navigateOrService": "NAVIGATE",
+    "target": ""
+  },
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}
