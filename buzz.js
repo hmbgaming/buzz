@@ -10,11 +10,23 @@ const rules = require('./blocks/rules.js');
 const level = require('./blocks/level.js');
 const reddit = require('./blocks/reddit.js');
 
-
 const discord_api_token = process.env.DISCORD_TOKEN || conf['discord-token'];
 const ai = api_ai(process.env.APIAI_TOKEN || conf['api-ai-token']);
 
 const bot = new discord.Client();
+
+
+const airbrake = require('airbrake').createClient(
+  process.env.AIRBRAKE_PROJECT_ID,
+  process.env.AIRBRAKE_API_KEY
+);
+airbrake.addFilter(function(notice) {
+  notice.context.environment = 'development';
+  notice.context.version = '1.0.3';
+  return notice;
+});
+airbrake.handleExceptions();
+
 
 function handler(message) {
   let request = ai.textRequest(message.content, {sessionId: message.author.username});
