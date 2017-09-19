@@ -19,7 +19,7 @@ module.exports = {
       automatic_retries: true,
       api_requests_per_minuite: 10
     });
-    reddit_search(bot, reddit_client, 'gametrailers', discord, conf);
+    reddit_search(bot, reddit_client, 'popular', discord, conf);
     reddit_search(bot, reddit_client, 'GameDeals', discord, conf);
   }
 }
