@@ -25,7 +25,7 @@ airbrake.addFilter(function(notice) {
   notice.context.version = '1.0.3';
   return notice;
 });
-airbrake.handleExceptions();
+//airbrake.handleExceptions();
 
 
 function handler(message) {
