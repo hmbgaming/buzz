@@ -41,7 +41,7 @@ bot.on('ready', () => {
 
 
 
-  console.log(bot);
+  console.log(bot.channels);
 
 
 
