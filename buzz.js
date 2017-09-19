@@ -10,9 +10,16 @@ const rules = require('./blocks/rules.js');
 const level = require('./blocks/level.js');
 const reddit = require('./blocks/reddit.js');
 
-
 const discord_api_token = process.env.DISCORD_TOKEN || conf['discord-token'];
 const ai = api_ai(process.env.APIAI_TOKEN || conf['api-ai-token']);
+
+
+const airbrake = require('airbrake').createClient(
+  process.env.AIRBRAKE_PROJECT_ID,
+  process.env.AIRBRAKE_API_KEY
+);
+airbrake.handleExceptions();
+
 
 const bot = new discord.Client();
 
