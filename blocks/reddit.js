@@ -2,9 +2,8 @@ function reddit_search(bot, reddit_client, sub_reddit, display_name, discord, co
   reddit_client.watcher.getPostWatcher(sub_reddit).on('post', function(post) {
       let embed = new discord.RichEmbed()
         .setColor(0x00AE86)
-        .setTitle(post.data.title)
-        .setFooter(display_name)
-        .setTimestamp()
+        .setTitle(display_name)
+        .setDescription(post.data.title)
         .setURL(post.data.url);
       bot.channels.find('name', conf['game-deal-channel']).send({embed});
     });
