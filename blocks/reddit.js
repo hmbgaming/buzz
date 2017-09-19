@@ -19,7 +19,7 @@ module.exports = {
       api_secret: process.env.REDDIT_SECRET,
 
       automatic_retries: true,
-      api_requests_per_minuite: 60
+      api_requests_per_minuite: 10
     });
     reddit_GameDeals(bot, sub_reddit, discord, conf);
   }
