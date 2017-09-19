@@ -40,7 +40,7 @@ bot.on('ready', () => {
   console.log('buzz-bot-initalized');
 
 
-  console.log(bot.channels);//bot.channels.find());
+  console.log(bot.channels.find('name', 'general'));
 
 
 
