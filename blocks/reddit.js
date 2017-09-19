@@ -4,7 +4,6 @@ function reddit_GameDeals(bot, sub_reddit, discord) {
         .setColor(0x00AE86)
         .setTitle(post.data.title)
         .setURL(post.data.url)
-        .setThumbnail(post.data.thumbnail)
         .setTimestamp();
 
       console.log(post.data.thumbnail)
