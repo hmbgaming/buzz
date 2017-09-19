@@ -3,12 +3,12 @@ module.exports = {
   handler: (message, discord) => {
     let embed = new discord.RichEmbed()
       .setColor(0x00AE86)
-      .setAuthor("Rules", message.author.defaultAvatarURL)
-      .setTitle("All community members are expected to abide by the follow rules")
+      .setTitle("Rules")
       .setThumbnail("https://cdn2.iconfinder.com/data/icons/helmet/512/warrior-soldier-helmet-war-512.png")
       .setTimestamp()
       .setDescription(`
-        
+*All community members are expected to abide by the follow rules*
+
 **Rule 1**
 Treat others with respect. Banter is fun, bullying is not. Make sure all parties are on the same page when it comes to communicating. This includes both text and voice chats.
 
