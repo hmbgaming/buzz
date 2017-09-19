@@ -20,6 +20,11 @@ const airbrake = require('airbrake').createClient(
   process.env.AIRBRAKE_PROJECT_ID,
   process.env.AIRBRAKE_API_KEY
 );
+airbrake.addFilter(function(notice) {
+  notice.context.environment = 'production';
+  notice.context.version = '1.2.3';
+  return notice;
+});
 airbrake.handleExceptions();
 
 throw new Error('I am an uncaught exception');
