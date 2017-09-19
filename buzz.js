@@ -27,7 +27,6 @@ airbrake.addFilter(function(notice) {
 });
 airbrake.handleExceptions();
 
-throw new Error('I am an uncaught exception');
 
 function handler(message) {
   let request = ai.textRequest(message.content, {sessionId: message.author.username});
