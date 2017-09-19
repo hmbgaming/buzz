@@ -50,30 +50,35 @@ function handler(message) {
 }
 
 
-bot.on('ready', () => {
-  console.log('buzz-bot-initalized');
-  reddit.handler(bot, snooper, discord, conf);
-});
-bot.on("guildMemberAdd", (member) => {
-  console.log('new-server-member');
-});
-bot.on("presenceUpdate", (userold, usernew) => {
-  if (userold.presence.status === 'offline' && usernew.presence.status === 'online') {
-    console.log('presence-update');
-  }
-});
-bot.on('message', (message) => {
-  if (message.author.bot) {return;}
-  if (message.content.startsWith('!')) {
-    var option = message.content.split(' ')
-    if (option[0] === '!uptime') {admin.uptime(conf, bot, message)}
-    if (option[0] === '!sync')   {admin.sync(conf, message)}
+var mDB = require('mongodb').MongoClient;
+mDB.connect(process.env.MONGODB_URI, (err, database) => {
 
-    return;
-  }
+  bot.on('ready', () => {
+    console.log('buzz-bot-initalized');
+    reddit.handler(bot, snooper, discord, conf);
+  });
+  bot.on("guildMemberAdd", (member) => {
+    console.log('new-server-member');
+  });
+  bot.on("presenceUpdate", (userold, usernew) => {
+    if (userold.presence.status === 'offline' && usernew.presence.status === 'online') {
+      console.log('presence-update');
+    }
+  });
+  bot.on('message', (message) => {
+    if (message.author.bot) {return;}
+    if (message.content.startsWith('!')) {
+      var option = message.content.split(' ')
+      if (option[0] === '!uptime') {admin.uptime(conf, bot, message)}
+      if (option[0] === '!sync')   {admin.sync(conf, message)}
 
-  if (message.isMentioned(bot.user)) {handler(message)}
-  level.handler(conf, message);
+      return;
+    }
+
+    if (message.isMentioned(bot.user)) {handler(message)}
+    level.handler(conf, message);
+
+  });
+  bot.login(discord_api_token);
 
 });
-bot.login(discord_api_token);

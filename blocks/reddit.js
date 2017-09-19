@@ -6,7 +6,7 @@ function reddit_search(bot, reddit_client, sub_reddit, display_name, discord, co
         .setDescription(post.data.title)
         .setFooter(display_name)
         .setTimestamp();
-        //.setURL(post.data.url);
+        .setURL(post.data.url);
       bot.channels.find('name', conf['game-deal-channel']).send({embed});
     });
 }
