@@ -8,6 +8,7 @@ module.exports = {
       .setThumbnail("https://cdn2.iconfinder.com/data/icons/helmet/512/warrior-soldier-helmet-war-512.png")
       .setTimestamp()
       .setDescription(`
+        
 **Rule 1**
 Treat others with respect. Banter is fun, bullying is not. Make sure all parties are on the same page when it comes to communicating. This includes both text and voice chats.
 
