@@ -50,7 +50,7 @@ module.exports = {
   handler: (conf, message) => {
     if (message.channel.type === 'text'){
       var mDB = require('mongodb').MongoClient;
-      mDB.connect(process.env.MONGOLAB_URI, (err, database) => {
+      mDB.connect(process.env.MONGODB_URI, (err, database) => {
 
         useradd(message, database);
         levelup(conf, message, database);
