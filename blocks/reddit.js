@@ -2,8 +2,10 @@ function reddit_search(bot, reddit_client, sub_reddit, discord, conf) {
   reddit_client.watcher.getPostWatcher(sub_reddit).on('post', function(post) {
       let embed = new discord.RichEmbed()
         .setColor(0x00AE86)
+        .setTitle('Game Deal')
+        .setThumbnail("https://cdn2.iconfinder.com/data/icons/helmet/512/warrior-soldier-helmet-war-512.png")
         .setDescription(post.data.title)
-        .setURL(post.data.url)
+        .setURL(post.data.url);
       bot.channels.find('name', conf['game-deal-channel']).send({embed});
     });
 }
