@@ -7,6 +7,7 @@ function reddit_GameDeals(bot, sub_reddit, discord, conf) {
         .setURL(post.data.url)
         .setTimestamp();
       bot.channels.find('name', conf['game-deal-channel']).send({embed});
+    .on('error', console.error)
     })
 }
 
