@@ -1,6 +1,6 @@
 function reddit_search(bot, reddit_client, sub_reddit, display_name, discord, conf) {
   reddit_client.watcher.getPostWatcher(sub_reddit).on('post', function(post) {
-    if (post.data.url === 'undefined') {return}
+    if (post.data.url === undefined) {return}
     let embed = new discord.RichEmbed()
       .setColor(0x00AE86)
       .setTitle(display_name)
