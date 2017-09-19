@@ -40,7 +40,7 @@ function handler(message) {
 
 bot.on('ready', () => {
   console.log('buzz-bot-initalized');
-  reddit.handler(bot, snooper, discord);
+  reddit.handler(bot, snooper, discord, conf);
 });
 bot.on("guildMemberAdd", (member) => {
   console.log('new-server-member');

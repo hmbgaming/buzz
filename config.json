@@ -3,8 +3,8 @@
   "api-ai-token": "api-token",
   "admin-role": "buzz admin",
 
+  "game-deal-channel": "general",
 
-  "group_notification": true,
   "group-color": "44b8fa",
   "exclude-roles": [
     "Brewmasters"
