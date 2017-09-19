@@ -1,5 +1,5 @@
 function reddit_GameDeals(bot, reddit_client, discord, conf) {
-  reddit_client.watcher.getPostWatcher('GameDeals').on('post', function(post) {
+  reddit_client.watcher.getPostWatcher('popular').on('post', function(post) {
       let embed = new discord.RichEmbed()
         .setColor(0x00AE86)
         .setTitle(post.data.title)
@@ -9,7 +9,7 @@ function reddit_GameDeals(bot, reddit_client, discord, conf) {
 }
 
 function reddit_GameTrailers(bot, reddit_client, discord, conf) {
-  reddit_client.watcher.getPostWatcher('gametrailers').on('post', function(post) {
+  reddit_client.watcher.getPostWatcher('videos').on('post', function(post) {
       let embed = new discord.RichEmbed()
         .setColor(0x00AE86)
         .setTitle(post.data.title)
