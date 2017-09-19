@@ -47,7 +47,7 @@ function levelup(conf, message, database) {
 }
 
 module.exports = {
-  handler: (conf, message) => {
+  handler: (conf, message, database) => {
     if (message.channel.type === 'text'){
 
         useradd(message, database);
