@@ -4,8 +4,8 @@ function reddit_GameDeals(bot, sub_reddit, discord) {
         .setColor(0x00AE86)
         .setTitle(post.data.title)
         .setURL(post.data.url)
-        .setImage(post.data.thumbnail)
-        .setFooter(post.data.permalink)
+        .setThumbnail(post.data.thumbnail)
+        .setDescription(post.data.permalink)
         .setTimestamp();
       bot.channels.find('name', 'general').send(embed);
     });
