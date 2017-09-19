@@ -47,12 +47,15 @@ function levelup(conf, message, database) {
 }
 
 module.exports = {
-  handler: (conf, message, database) => {
+  handler: (conf, message) => {
     if (message.channel.type === 'text'){
+      var mDB = require('mongodb').MongoClient;
+      mDB.connect(process.env.MONGODB_URI, (err, database) => {
 
         useradd(message, database);
         levelup(conf, message, database);
         reward(conf, message, database);
 
+      });
   }}
 }
