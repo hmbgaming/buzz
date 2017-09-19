@@ -1,12 +1,15 @@
 const fs = require('fs');
 const discord = require('discord.js');
 const api_ai = require('apiai');
+const snooper = require('reddit-snooper');
 
 const conf = require('./config.json');
 const admin = require('./blocks/admin.js');
 const groups = require('./blocks/groups.js');
 const rules = require('./blocks/rules.js');
 const level = require('./blocks/level.js');
+const reddit = require('./blocks/reddit.js');
+
 
 const discord_api_token = process.env.DISCORD_TOKEN || conf['discord-token'];
 const ai = api_ai(process.env.APIAI_TOKEN || conf['api-ai-token']);
@@ -37,6 +40,7 @@ function handler(message) {
 
 bot.on('ready', () => {
   console.log('buzz-bot-initalized');
+  reddit.handler(bot, snooper, discord, conf);
 });
 bot.on("guildMemberAdd", (member) => {
   console.log('new-server-member');
