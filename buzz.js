@@ -23,7 +23,7 @@ function handler(message) {
       let intent = response['result']['metadata']['intentName'];
 
 
-      if (response['result']['action'] === 'group') {groups.handler(conf, message, intent, discord_response); return}
+      if (response['result']['action'] === 'group') {groups.handler(conf, message, intent, discord_response, discord); return}
       if (response['result']['action'] === 'rules') {rules.handler(message, discord); return}
 
       message.author.send(discord_response); return;
