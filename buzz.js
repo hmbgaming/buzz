@@ -21,8 +21,8 @@ const airbrake = require('airbrake').createClient(
   process.env.AIRBRAKE_API_KEY
 );
 airbrake.addFilter(function(notice) {
-  notice.context.environment = 'production';
-  notice.context.version = '1.2.3';
+  notice.context.environment = 'development';
+  notice.context.version = '1.0.3';
   return notice;
 });
 airbrake.handleExceptions();
