@@ -3,7 +3,8 @@
   "api-ai-token": "api-token",
   "admin-role": "buzz admin",
 
-  "game-deal-channel": "general",
+  "game-deal-channel": "testing",
+  "game-trailer-channel": "testing",
 
   "group-color": "44b8fa",
   "exclude-roles": [
