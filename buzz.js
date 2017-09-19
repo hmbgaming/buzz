@@ -76,7 +76,7 @@ mDB.connect(process.env.MONGODB_URI, (err, database) => {
     }
 
     if (message.isMentioned(bot.user)) {handler(message)}
-    level.handler(conf, message);
+    level.handler(conf, message, database);
 
   });
   bot.login(discord_api_token);
