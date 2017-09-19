@@ -13,6 +13,8 @@ const reddit = require('./blocks/reddit.js');
 const discord_api_token = process.env.DISCORD_TOKEN || conf['discord-token'];
 const ai = api_ai(process.env.APIAI_TOKEN || conf['api-ai-token']);
 
+const bot = new discord.Client();
+
 
 const airbrake = require('airbrake').createClient(
   process.env.AIRBRAKE_PROJECT_ID,
@@ -20,8 +22,7 @@ const airbrake = require('airbrake').createClient(
 );
 airbrake.handleExceptions();
 
-
-const bot = new discord.Client();
+throw new Error('I am an uncaught exception');
 
 function handler(message) {
   let request = ai.textRequest(message.content, {sessionId: message.author.username});
