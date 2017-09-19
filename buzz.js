@@ -1,6 +1,7 @@
 const fs = require('fs');
 const discord = require('discord.js');
 const api_ai = require('apiai');
+const reddit = require('reddit-snooper');
 
 const conf = require('./config.json');
 const admin = require('./blocks/admin.js');
@@ -37,6 +38,13 @@ function handler(message) {
 
 bot.on('ready', () => {
   console.log('buzz-bot-initalized');
+
+
+
+  console.log(bot);
+
+
+
 });
 bot.on("guildMemberAdd", (member) => {
   console.log('new-server-member');
