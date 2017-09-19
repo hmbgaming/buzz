@@ -22,10 +22,10 @@ const airbrake = require('airbrake').createClient(
 );
 airbrake.addFilter(function(notice) {
   notice.context.environment = 'development';
-  notice.context.version = '1.0.3';
+  notice.context.version = '1.0.4';
   return notice;
 });
-//airbrake.handleExceptions();
+airbrake.handleExceptions();
 
 
 function handler(message) {

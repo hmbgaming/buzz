@@ -1,6 +1,6 @@
 {
   "name": "buzz",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Hold My Beer Discord Bot",
   "main": "buzz.js",
   "scripts": {
