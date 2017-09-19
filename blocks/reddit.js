@@ -7,7 +7,7 @@ function reddit_GameDeals(bot, sub_reddit, discord) {
         .setImage(post.data.thumbnail)
         .setFooter(post.data.permalink)
         .setTimestamp();
-  
+      bot.channels.find('name', 'general').send(embed);
     });
 }
 
