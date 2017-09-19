@@ -1,14 +1,11 @@
 function reddit_GameDeals(bot, sub_reddit, discord, conf) {
-  sub_reddit.watcher.getPostWatcher('GameDeals/new/')
-    .on('post', function(post) {
+  sub_reddit.watcher.getPostWatcher('GameDeals/new/').on('post', function(post) {
       let embed = new discord.RichEmbed()
         .setColor(0x00AE86)
         .setTitle(post.data.title)
         .setURL(post.data.url)
-        .setTimestamp();
       bot.channels.find('name', conf['game-deal-channel']).send({embed});
-    .on('error', console.error)
-    })
+    });
 }
 
 
