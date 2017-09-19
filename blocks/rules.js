@@ -1,6 +1,6 @@
 
 module.exports = {
-  handler: (message) => {
+  handler: (message, discord) => {
     let embed = new discord.RichEmbed()
       .setColor(0x00AE86)
       .setAuthor("Rules")
