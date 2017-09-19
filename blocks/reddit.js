@@ -6,7 +6,9 @@ function reddit_GameDeals(bot, sub_reddit, discord) {
         .setURL(post.data.url)
         .setThumbnail(post.data.thumbnail)
         .setTimestamp();
-      bot.channels.find('name', 'general').send({embed});
+
+      console.log(post.data.thumbnail)
+      //bot.channels.find('name', 'general').send({embed});
     });
 }
 
