@@ -36,6 +36,6 @@ module.exports = {
     var collection = database.collection('release-keys');
     collection.find({}).toArray(function(err, table) {
       for (let row in table) {console.log(row)}
-    }
+    });
   }
 }
