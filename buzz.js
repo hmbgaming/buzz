@@ -55,7 +55,7 @@ mDB.connect(process.env.MONGODB_URI, (err, database) => {
 
   bot.on('ready', () => {
     console.log('buzz-bot-initalized');
-    reddit.handler(bot, discord, conf);
+    reddit.handler(bot, snooper, discord, conf);
   });
   bot.on("guildMemberAdd", (member) => {
     console.log('new-server-member');
