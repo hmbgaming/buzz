@@ -20,6 +20,7 @@
     "airbrake": "^2.1.0",
     "apiai": "^4.0.3",
     "discord.js": "^11.2.1",
+    "moment": "^2.18.1",
     "mongodb": "^2.2.31",
     "reddit-snooper": "^1.0.1"
   }
