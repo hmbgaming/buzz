@@ -1,5 +1,5 @@
 function reddit_search(bot, reddit_client, sub_reddit, display_name, discord, conf) {
-  var watch = reddit_client.watcher.getPostWatcher(sub_reddit).
+  var watch = reddit_client.watcher.getPostWatcher(sub_reddit);
   watch.on('post', function(post) {
       let embed = new discord.RichEmbed()
         .setColor(0x00AE86)
