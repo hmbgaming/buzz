@@ -37,4 +37,5 @@ module.exports = {
     collection.find({}).toArray(function(err, table) {
       for (let row in table) {console.log(row)}
     }
+  }
 }
