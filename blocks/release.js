@@ -30,7 +30,7 @@ module.exports = {
 
     var collection = database.collection('release-keys');
     //console.log(collection);
-  }
+  },
 
   add_release_key: (database, message, release_key) => {
     var collection = database.collection('release-keys');
