@@ -34,7 +34,7 @@ module.exports = {
 
   add_release_key: (database, message, key) => {
     var collection = database.collection('release-keys');
-    collection.insertMany(['key': key], function(err, result) {
+    collection.insertMany([{'key': key}], function(err, result) {
       message.author.send({embed: {color: 3447003, description: `"${key}" was added to the release list!`,}})
     });
   }
