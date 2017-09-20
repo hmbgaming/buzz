@@ -5,7 +5,7 @@ function random(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-function release_key(schedule, database, conf) {
+function release_key(moment, schedule, database, conf) {
   let release_hour = random(8, 22);
   let release_minute = random(1, 59);
   //let release_date = `* ${release_minute} ${release_hour} * * *`
@@ -26,7 +26,7 @@ function release_key(schedule, database, conf) {
 
 module.exports = {
   handler: (schedule, conf, moment, database) => {
-    if (conf['daily-key-release'] !== moment().format('LL')) {release_key(schedule, database, conf)}
+    if (conf['daily-key-release'] !== moment().format('LL')) {release_key(moment, schedule, database, conf)}
 
   },
 
