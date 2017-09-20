@@ -15,8 +15,8 @@ function release_key(schedule, database) {
     var collection = database.collection('release-keys');
     collection.find({}).toArray(function(err, table) {
       for (let row in table) {var current_release = table[row]['key']; return}
+      console.log(current_release);
     });
-    console.log(current_release);
 
     console.log('release');
     j.cancel();
