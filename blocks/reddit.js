@@ -24,7 +24,7 @@ module.exports = {
       automatic_retries: true,
       api_requests_per_minuite: 10
     });
-    reddit_search(bot, reddit_client, 'popular', 'Game Trailers', discord, conf);
-    //reddit_search(bot, reddit_client, 'GameDeals', 'Game Deals', discord, conf);
+    reddit_search(bot, reddit_client, 'gametrailers', 'Game Trailers', discord, conf);
+    reddit_search(bot, reddit_client, 'GameDeals', 'Game Deals', discord, conf);
   }
 }
