@@ -3,6 +3,7 @@ const discord = require('discord.js');
 const api_ai = require('apiai');
 const snooper = require('reddit-snooper');
 const moment = require('moment');
+const schedule = require('node-schedule');
 
 const conf = require('./config.json');
 const admin = require('./blocks/admin.js');
@@ -80,7 +81,7 @@ mDB.connect(process.env.MONGODB_URI, (err, database) => {
 
     if (message.isMentioned(bot.user)) {handler(message)}
     level.handler(conf, message, database);
-    release.handler(conf, moment, database);
+    release.handler(schedule, conf, moment, database);
 
   });
   bot.login(discord_api_token);
