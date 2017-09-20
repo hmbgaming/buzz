@@ -5,6 +5,7 @@
 
   "game-deal-channel": "testing",
   "game-trailer-channel": "testing",
+  "release-channel": "testing",
 
   "group-color": "44b8fa",
   "exclude-roles": [

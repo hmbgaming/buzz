@@ -5,7 +5,7 @@ function random(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-function release_key(moment, schedule, database, conf) {
+function release_key(bot, moment, schedule, database, conf) {
   conf['daily-key-release'] = moment().format('LL');
 
   let release_hour = random(8, 22);
@@ -18,7 +18,13 @@ function release_key(moment, schedule, database, conf) {
     var collection = database.collection('release-keys');
     collection.find({}).toArray(function(err, table) {
       for (let row in table) {
-        console.log(table[row]['key']);
+        let embed = new discord.RichEmbed()
+          .setColor('#0086AE')
+          .setTitle(table[row]['key'])
+          .setFooter('Game Key Release')
+          .setTimestamp();
+        bot.channels.find('name', conf['release-channel']).send({embed});
+        collection.deleteOne({'key': table[row]['key']}, function(err, result) {});
         return}
     });
 
@@ -27,8 +33,8 @@ function release_key(moment, schedule, database, conf) {
 }
 
 module.exports = {
-  handler: (schedule, conf, moment, database) => {
-    if (conf['daily-key-release'] !== moment().format('LL')) {release_key(moment, schedule, database, conf)}
+  handler: (bot, schedule, conf, moment, database) => {
+    if (conf['daily-key-release'] !== moment().format('LL')) {release_key(bot, moment, schedule, database, conf)}
 
   },
 
