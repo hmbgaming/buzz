@@ -35,7 +35,8 @@ module.exports = {
   add_release_key: (database, message, release_key) => {
     var collection = database.collection('release-keys');
     collection.find({}).toArray(function(err, table) {
-      console.log(table[0]['available-keys'])
+      table[0]['available-keys'].push(release_key);
+      collection.updateOne({ $set:{'available-keys': table[0]['available-keys']});
     })
   }
 }
