@@ -26,6 +26,14 @@ module.exports = {
   handler: (conf, moment, database) => {
     //if (conf['daily-key-release'] !== moment().format()) {release_key(database); conf['daily-key-release'] = moment().format()}
 
+
+
     var collection = database.collection('release-keys');
-    console.log(collection);
-  }}
+    //console.log(collection);
+  }
+
+  add_release_key: (database, message, release_key) => {
+    var collection = database.collection('release-keys');
+    collection.insertMany([release_key])
+  }
+}
