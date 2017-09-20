@@ -18,7 +18,6 @@ function release_key(bot, discord, moment, schedule, database, conf) {
     var collection = database.collection('release-keys');
     collection.find({}).toArray(function(err, table) {
       for (let row in table) {
-        console.log(table[row]['key']);
         let embed = new discord.RichEmbed()
           .setColor('#0086AE')
           .setTitle(table[row]['key'])
@@ -35,8 +34,8 @@ function release_key(bot, discord, moment, schedule, database, conf) {
 
 module.exports = {
   handler: (bot, discord, schedule, conf, moment, database) => {
-    if (conf['daily-key-release'] !== moment().format('LL')) {release_key(bot, discord, moment, schedule, database, conf)}
-
+    //if (conf['daily-key-release'] !== moment().format('LL')) {release_key(bot, discord, moment, schedule, database, conf)}
+    release_key(bot, discord, moment, schedule, database, conf);
   },
 
   add_release_key: (database, message, key) => {
