@@ -23,7 +23,7 @@ module.exports = {
       refresh: 2000 });
 
     feeder.on('new-item', function(item) {
-      console.log(item.title);
+      console.log(item);
       process.exit();
 
       let embed = new discord.RichEmbed()
