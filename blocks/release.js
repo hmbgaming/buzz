@@ -5,7 +5,7 @@ function random(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-function release_key(bot, moment, schedule, database, conf) {
+function release_key(bot, discord, moment, schedule, database, conf) {
   conf['daily-key-release'] = moment().format('LL');
 
   let release_hour = random(8, 22);
@@ -33,8 +33,8 @@ function release_key(bot, moment, schedule, database, conf) {
 }
 
 module.exports = {
-  handler: (bot, schedule, conf, moment, database) => {
-    if (conf['daily-key-release'] !== moment().format('LL')) {release_key(bot, moment, schedule, database, conf)}
+  handler: (bot, discord, schedule, conf, moment, database) => {
+    if (conf['daily-key-release'] !== moment().format('LL')) {release_key(bot, discord, moment, schedule, database, conf)}
 
   },
 
