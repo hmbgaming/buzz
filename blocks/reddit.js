@@ -10,7 +10,7 @@ function reddit_search(bot, reddit_client, sub_reddit, display_name, discord, co
         .setURL(post.data.url);
       bot.channels.find('name', conf['game-deal-channel']).send({embed});
     })
-    .on('error', console.error)
+    .on('error', console.log('[!] possible item lost in reddit search.'))
 }
 
 module.exports = {
