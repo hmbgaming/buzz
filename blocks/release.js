@@ -12,12 +12,7 @@ function release_key(database) {
   let release_date = `1 * * * * *`
 
   var j = schedule.scheduleJob(release_date, function(){
-    var collection = database.collection('release-keys');
-    collection.find({}).toArray(function(err, table) {
-      for (let row in table) {var current_release = table[row]['key']; return}
-    });
-    console.log(current_release);
-
+    
     console.log('release');
     j.cancel();
   });
