@@ -18,6 +18,7 @@ function release_key(database) {
     });
     console.log(current_release);
 
+    console.log('release');
     j.cancel();
   });
 }
