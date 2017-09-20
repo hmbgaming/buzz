@@ -32,12 +32,10 @@ module.exports = {
     //console.log(collection);
   },
 
-  add_release_key: (database, message, release_key) => {
+  add_release_key: (database, message, key) => {
     var collection = database.collection('release-keys');
-    collection.find({}).toArray(function(err, table) {
-      table[0]['available-keys'].push(release_key);
-
-      console.log(table[0]['available-keys']);
+    collection.insertMany(['key': key], function(err, result) {
+      message.author.send({embed: {color: 3447003, description: `"${key}" was added to the release list!`,}})
     });
   }
 }
