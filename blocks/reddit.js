@@ -2,7 +2,7 @@ function watcher(bot, discord, conf, feed, feed_name, color, channel) {
   let RssFeedEmitter = require('rss-feed-emitter');
   let feeder = new RssFeedEmitter();
 
-  feeder.add({url: feed, refresh: 2000 });
+  feeder.add({url: feed, refresh: 60 });
   feeder.on('new-item', function(item) {
     let embed = new discord.RichEmbed()
       .setColor(color)
