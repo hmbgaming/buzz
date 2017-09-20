@@ -39,6 +39,6 @@ module.exports = {
       table[0]['available-keys'].push(release_key);
       available_keys = table[0]['available-keys']
     });
-    collection.updateOne({ $set:{'available-keys': available_keys});
+    console.log(available_keys);
   }
 }
