@@ -14,7 +14,7 @@ function release_key(schedule, database) {
   var j = schedule.scheduleJob(release_date, function(){
     var collection = database.collection('release-keys');
     collection.find({}).toArray(function(err, table) {
-      for (let row in table) {console.log(table[row])}//process.env.CURRENT_RELEASE = table[row]['key']; return}
+      for (let row in table) {console.log(table[row]['key'])}//process.env.CURRENT_RELEASE = table[row]['key']; return}
     });
     console.log(process.env.CURRENT_RELEASE);
 
