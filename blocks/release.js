@@ -35,7 +35,7 @@ module.exports = {
     if (conf['daily-key-release'] !== moment().format('LL')) {release_key(bot, discord, moment, schedule, database, conf)}
   },
 
-  add_release_key: (conf, database, message, key) => {
+  add_release_key: (database, message, key) => {
     var collection = database.collection('release-keys');
     collection.insertMany([{'key': key}], function(err, result) {
       message.author.send({embed: {color: 3447003, description: `**${key}** was added to the release list!`,}})
