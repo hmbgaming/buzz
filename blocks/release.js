@@ -35,7 +35,7 @@ module.exports = {
     if (conf['daily-key-release'] !== moment().format('LL')) {release_key(bot, discord, moment, schedule, database, conf)}
   },
 
-  add_release_key: (database, message, key) => {
+  add_release_key: (conf, database, message, key) => {
     if (message.member.roles.some(r=>[conf['admin-role']].includes(r.name)) === false) {return;}
     var collection = database.collection('release-keys');
     collection.insertMany([{'key': key}], function(err, result) {
