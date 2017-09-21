@@ -5,6 +5,7 @@
 
   "game-deal-channel": "testing",
   "game-trailer-channel": "testing",
+  "release-channel": "testing",
 
   "group-color": "44b8fa",
   "exclude-roles": [
@@ -40,6 +41,8 @@
     "x5-voting-power-rank": 15,
     "vip-chat-rank": 16,
     "hmb-swag-rank": 20
-  }
+  },
+
+  "daily-key-release": ""
 
 }

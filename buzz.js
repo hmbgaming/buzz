@@ -2,6 +2,8 @@ const fs = require('fs');
 const discord = require('discord.js');
 const api_ai = require('apiai');
 const snooper = require('reddit-snooper');
+const moment = require('moment');
+const schedule = require('node-schedule');
 
 const conf = require('./config.json');
 const admin = require('./blocks/admin.js');
@@ -9,6 +11,7 @@ const groups = require('./blocks/groups.js');
 const rules = require('./blocks/rules.js');
 const level = require('./blocks/level.js');
 const reddit = require('./blocks/reddit.js');
+const release = require('./blocks/release.js');
 
 const discord_api_token = process.env.DISCORD_TOKEN || conf['discord-token'];
 const ai = api_ai(process.env.APIAI_TOKEN || conf['api-ai-token']);
@@ -71,12 +74,14 @@ mDB.connect(process.env.MONGODB_URI, (err, database) => {
       var option = message.content.split(' ')
       if (option[0] === '!uptime') {admin.uptime(conf, bot, message)}
       if (option[0] === '!sync')   {admin.sync(conf, message)}
+      if (option[0] === '!release')   {release.add_release_key(database, message, option[1])}
 
       return;
     }
 
     if (message.isMentioned(bot.user)) {handler(message)}
     level.handler(conf, message, database);
+    release.handler(bot, discord, schedule, conf, moment, database);
 
   });
   bot.login(discord_api_token);
