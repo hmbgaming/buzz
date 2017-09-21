@@ -22,6 +22,8 @@ module.exports = {
 
   }} message.author.send({embed: {color: 3447003, title: 'Success',}})},
 
-  release: (release, database, message, option) => {release.add_release_key(database, message, option)},
+  release: (release, database, message, option, conf) => {
+    if (message.member.roles.some(r=>[conf['admin-role']].includes(r.name)) === false) {return;}
+    release.add_release_key(database, message, option);},
 
 }
