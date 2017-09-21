@@ -10,9 +10,7 @@ function release_key(bot, discord, moment, schedule, database, conf) {
 
   let release_hour = random(8, 22);
   let release_minute = random(1, 59);
-  //let release_date = `* ${release_minute} ${release_hour} * * *`
-  let release_date = `1 * * * * *`
-
+  let release_date = `* ${release_minute} ${release_hour} * * *`
 
   var j = schedule.scheduleJob(release_date, function(){
     var collection = database.collection('release-keys');
@@ -21,7 +19,7 @@ function release_key(bot, discord, moment, schedule, database, conf) {
         let embed = new discord.RichEmbed()
           .setColor('#0086AE')
           .setTitle(table[row]['key'])
-          .setFooter('Game Key Release')
+          .setFooter('Give-Away')
           .setTimestamp();
         bot.channels.find('name', conf['release-channel']).send({embed});
         collection.deleteOne({'key': table[row]['key']}, function(err, result) {});
@@ -34,8 +32,7 @@ function release_key(bot, discord, moment, schedule, database, conf) {
 
 module.exports = {
   handler: (bot, discord, schedule, conf, moment, database) => {
-    //if (conf['daily-key-release'] !== moment().format('LL')) {release_key(bot, discord, moment, schedule, database, conf)}
-    release_key(bot, discord, moment, schedule, database, conf);
+    if (conf['daily-key-release'] !== moment().format('LL')) {release_key(bot, discord, moment, schedule, database, conf)}
   },
 
   add_release_key: (database, message, key) => {
