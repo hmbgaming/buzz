@@ -80,8 +80,10 @@ mDB.connect(process.env.MONGODB_URI, (err, database) => {
     }
 
     if (message.isMentioned(bot.user)) {handler(message)}
-    level.handler(conf, message, database);
-    release.handler(bot, discord, schedule, conf, moment, database);
+      level.handler(conf, message, database);
+
+    if (message.member.roles.some(r=>[conf['admin-role']].includes(r.name)) === false) {return;}
+      release.handler(bot, discord, schedule, conf, moment, database);
 
   });
   bot.login(discord_api_token);
