@@ -36,7 +36,6 @@ module.exports = {
   },
 
   add_release_key: (conf, database, message, key) => {
-    if (message.member.roles.some(r=>[conf['admin-role']].includes(r.name)) === false) {return;}
     var collection = database.collection('release-keys');
     collection.insertMany([{'key': key}], function(err, result) {
       message.author.send({embed: {color: 3447003, description: `**${key}** was added to the release list!`,}})

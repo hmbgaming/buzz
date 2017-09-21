@@ -71,6 +71,8 @@ mDB.connect(process.env.MONGODB_URI, (err, database) => {
   bot.on('message', (message) => {
     if (message.author.bot) {return;}
     if (message.content.startsWith('!')) {
+      if (message.member.roles.some(r=>[conf['admin-role']].includes(r.name)) === false) {return;}
+
       var option = message.content.split(' ')
       if (option[0] === '!uptime') {admin.uptime(conf, bot, message)}
       if (option[0] === '!sync')   {admin.sync(conf, message)}
