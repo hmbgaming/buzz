@@ -12,8 +12,11 @@ module.exports = {
     message.channel.send({embed}).then(msg => {
       let up = bot.emojis.find("name", "thumbsup");
       let down = bot.emojis.find("name", "thumbsdown");
+      console.log(up);
+
+      /*
       msg.react(up.id);
-      msg.react(down.id);
+      msg.react(down.id); */
     });
 
     //bot.user.lastMessage.react(':thumbsup:');
