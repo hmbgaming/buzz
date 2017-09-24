@@ -10,8 +10,8 @@ module.exports = {
       .setFooter('Polls')
       .setTimestamp();
     message.channel.send({embed}).then(msg => {
-      msg.react(':thumbsup:');
-      msg.react(':thumbsdown:');
+      msg.react('thumbsup');
+      msg.react('thumbsdown');
     });
 
     //bot.user.lastMessage.react(':thumbsup:');
