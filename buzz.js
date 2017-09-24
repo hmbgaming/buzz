@@ -11,7 +11,7 @@ const groups = require('./blocks/groups.js');
 const rules = require('./blocks/rules.js');
 const level = require('./blocks/level.js');
 const reddit = require('./blocks/reddit.js');
-const release = require('./blocks/release.js');
+//const release = require('./blocks/release.js');
 const poll = require('./blocks/poll.js');
 
 const discord_api_token = process.env.DISCORD_TOKEN || conf['discord-token'];
@@ -31,7 +31,6 @@ airbrake.addFilter(function(notice) {
 });
 airbrake.handleExceptions();
 
-
 function handler(message) {
   let request = ai.textRequest(message.content, {sessionId: message.author.username});
   request.on('response', function(response) {
@@ -44,6 +43,18 @@ function handler(message) {
 
       if (response['result']['action'] === 'group') {groups.handler(conf, message, intent, discord_response, discord); return}
       if (response['result']['action'] === 'rules') {rules.handler(message, discord); return}
+      if (response['result']['action'] === 'help-fallback') {
+        let help_fallback = new discord.RichEmbed()
+          .setColor(0x00AE86)
+          .setTitle("Welcome to Hold My Beer Discord Server")
+          .setThumbnail("https://cdn2.iconfinder.com/data/icons/helmet/512/warrior-soldier-helmet-war-512.png")
+          .setTimestamp()
+          .setFooter("Buzz")
+          .setDescription("*Salutaions! My name is Buzz, I'm here to assist you. Below are several of the services I offer!*")
+          .addField('Group Notifications','You can *join* roles to recieve game specific messages no matter what channel they are in! Ask me about it to get started!')
+          .addField('Leveling','As you communicate with your peers you will accumulate experience, as you level up you will be rewarded with new roles & privileges')
+          .addField('Channel Polls','Make sure to check a channels pinned messages for the current polls going on!');
+        message.author.send(help_fallback); return}
 
       message.author.send(discord_response); return;
     }
@@ -52,7 +63,6 @@ function handler(message) {
   request.on('error', function(error) {console.log(error)});
   request.end();
 }
-
 
 var mDB = require('mongodb').MongoClient;
 mDB.connect(process.env.MONGODB_URI, (err, database) => {
@@ -76,14 +86,14 @@ mDB.connect(process.env.MONGODB_URI, (err, database) => {
       if (option[0] === '!uptime')  {admin.uptime(conf, bot, message)}
       if (option[0] === '!sync')    {admin.sync(conf, message)}
       if (option[0] === '!poll')    {poll.create(conf, bot, discord, message, option)}
-      if (option[0] === '!release') {release.add_release_key(database, conf, message, option[1])}
+      //if (option[0] === '!release') {release.add_release_key(database, conf, message, option[1])}
 
       return;
     }
 
     if (message.isMentioned(bot.user)) {handler(message)}
     level.handler(conf, message, database);
-    release.handler(bot, discord, schedule, conf, moment, database);
+    //release.handler(bot, discord, schedule, conf, moment, database);
 
   });
   bot.login(discord_api_token);
