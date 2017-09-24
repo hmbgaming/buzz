@@ -10,7 +10,9 @@ function release_key(bot, discord, moment, schedule, database, conf) {
 
   let release_hour = random(8, 22);
   let release_minute = random(1, 59);
-  let release_date = `* ${release_minute} ${release_hour} * * *`
+  let release_date = `* ${release_minute} ${release_hour} * * *`;
+
+  console.log(`[!] releasing key at ${release_hour}:${release_minute}`);
 
   var j = schedule.scheduleJob(release_date, function(){
     var collection = database.collection('release-keys');
