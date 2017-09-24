@@ -75,7 +75,7 @@ mDB.connect(process.env.MONGODB_URI, (err, database) => {
       var option = message.content.split(' ')
       if (option[0] === '!uptime')  {admin.uptime(conf, bot, message)}
       if (option[0] === '!sync')    {admin.sync(conf, message)}
-      if (option[0] === '!poll')    {poll.create(conf, bot, discord, message, option[1])}
+      if (option[0] === '!poll')    {poll.create(conf, bot, discord, message, option)}
       if (option[0] === '!release') {release.add_release_key(database, conf, message, option[1])}
 
       return;
