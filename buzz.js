@@ -11,7 +11,7 @@ const groups = require('./blocks/groups.js');
 const rules = require('./blocks/rules.js');
 const level = require('./blocks/level.js');
 const reddit = require('./blocks/reddit.js');
-const release = require('./blocks/release.js');
+//const release = require('./blocks/release.js');
 const poll = require('./blocks/poll.js');
 
 const discord_api_token = process.env.DISCORD_TOKEN || conf['discord-token'];
@@ -86,14 +86,14 @@ mDB.connect(process.env.MONGODB_URI, (err, database) => {
       if (option[0] === '!uptime')  {admin.uptime(conf, bot, message)}
       if (option[0] === '!sync')    {admin.sync(conf, message)}
       if (option[0] === '!poll')    {poll.create(conf, bot, discord, message, option)}
-      if (option[0] === '!release') {release.add_release_key(database, conf, message, option[1])}
+      //if (option[0] === '!release') {release.add_release_key(database, conf, message, option[1])}
 
       return;
     }
 
     if (message.isMentioned(bot.user)) {handler(message)}
     level.handler(conf, message, database);
-    release.handler(bot, discord, schedule, conf, moment, database);
+    //release.handler(bot, discord, schedule, conf, moment, database);
 
   });
   bot.login(discord_api_token);
