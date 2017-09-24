@@ -32,6 +32,19 @@ airbrake.addFilter(function(notice) {
 airbrake.handleExceptions();
 
 
+const help_fallback = new discord.RichEmbed()
+  .setColor(0x00AE86)
+  .setTitle("Group Notifications")
+  .setThumbnail("https://cdn2.iconfinder.com/data/icons/helmet/512/warrior-soldier-helmet-war-512.png")
+  .setTimestamp()
+  .setFooter("Buzz")
+  .setDescription()
+  .addField('Group Notifications','You can *join* roles to recieve game specific messages no matter what channel they are in!')
+  .addField('Leveling','As you communicate with your peers you will accumulate experience, as you level up you will be rewarded with new roles & privileges')
+  .addField('Channel Polls','Make sure to check a channels pinned messages for the current polls going on!')
+  .addField('Releasing Game Keys','Between 8am - 10pm, there is a chance for a steam game key to be released in <text-channel>!');
+
+
 function handler(message) {
   let request = ai.textRequest(message.content, {sessionId: message.author.username});
   request.on('response', function(response) {
@@ -53,20 +66,6 @@ function handler(message) {
   request.on('error', function(error) {console.log(error)});
   request.end();
 }
-
-
-const help_fallback = new discord.RichEmbed()
-  .setColor(0x00AE86)
-  .setTitle("Group Notifications")
-  .setThumbnail("https://cdn2.iconfinder.com/data/icons/helmet/512/warrior-soldier-helmet-war-512.png")
-  .setTimestamp()
-  .setFooter("Buzz")
-  .setDescription()
-  .addField('Group Notifications','You can *join* roles to recieve game specific messages no matter what channel they are in!')
-  .addField('Leveling','As you communicate with your peers you will accumulate experience, as you level up you will be rewarded with new roles & privileges')
-  .addField('Channel Polls','Make sure to check a channels pinned messages for the current polls going on!')
-  .addField('Releasing Game Keys','Between 8am - 10pm, there is a chance for a steam game key to be released in <text-channel>!');
-
 
 var mDB = require('mongodb').MongoClient;
 mDB.connect(process.env.MONGODB_URI, (err, database) => {
