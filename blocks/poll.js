@@ -9,11 +9,12 @@ module.exports = {
       .setDescription(question)
       .setFooter('Polls')
       .setTimestamp();
-    message.channel.send({embed});
+    message.channel.send({embed}).then(msg => {
+      msg.react(':thumbsup:');
+      msg.react(':thumbsdown:');
+    });
 
-    let up  = bot.emojis.find('name', 'thumbsup');
-
-    console.log(bot)//.react(up.id);
+    //bot.user.lastMessage.react(':thumbsup:');
     //bot.user.lastMessage.react(':thumbsdown:');
     //bot.user.lastMessage.pin();
   }
