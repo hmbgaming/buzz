@@ -53,8 +53,7 @@ function handler(message) {
           .setDescription("*Salutaions! My name is Buzz, I'm here to assist you. Below are several of the services I offer!*")
           .addField('Group Notifications','You can *join* roles to recieve game specific messages no matter what channel they are in! Ask me about it to get started!')
           .addField('Leveling','As you communicate with your peers you will accumulate experience, as you level up you will be rewarded with new roles & privileges')
-          .addField('Channel Polls','Make sure to check a channels pinned messages for the current polls going on!')
-          .addField('Releasing Game Keys','Between 8am - 10pm, there is a chance for a steam game key to be released in <text-channel>!');
+          .addField('Channel Polls','Make sure to check a channels pinned messages for the current polls going on!');
         message.author.send(help_fallback); return}
 
       message.author.send(discord_response); return;
