@@ -36,8 +36,8 @@ module.exports = {
   },
 
   add_release_key: (database, conf, message, key) => {
-    message.delete();
     if (message.channel.type === 'dm') {message.author.send({embed: {color: 3447003, title: 'Server commands must be used in the server.',}}); return}
+    message.delete();
     if (message.member.roles.some(r=>[conf['admin-role']].includes(r.name)) === false) {return;}
     var collection = database.collection('release-keys');
     collection.insertMany([{'key': key}], function(err, result) {
