@@ -13,8 +13,8 @@ module.exports = {
 
     let up  = bot.emojis.find('name', 'thumbsup');
 
-    bot.user.lastMessage.react(up);
+    console.log(bot.user.lastMessage)//.react(up.id);
     //bot.user.lastMessage.react(':thumbsdown:');
-    bot.user.lastMessage.pin();
+    //bot.user.lastMessage.pin();
   }
 }
