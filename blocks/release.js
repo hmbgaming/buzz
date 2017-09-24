@@ -35,7 +35,7 @@ module.exports = {
     if (conf['daily-key-release'] !== moment().format('LL')) {release_key(bot, discord, moment, schedule, database, conf)}
   },
 
-  add_release_key: (database, message, key) => {
+  add_release_key: (database, conf, message, key) => {
     if (message.channel.type === 'dm') {message.author.send({embed: {color: 3447003, title: 'Server commands must be used in the server.',}}); return}
     if (message.member.roles.some(r=>[conf['admin-role']].includes(r.name)) === false) {return;}
     var collection = database.collection('release-keys');
