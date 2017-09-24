@@ -10,11 +10,8 @@ module.exports = {
       .setFooter('Polls')
       .setTimestamp();
     message.channel.send({embed}).then(msg => {
-      //let up = bot.emojis.find("name", "thumbsup");
-      console.log(bot.guilds)
-      /*
-      msg.react(up.id);
-      msg.react(down.id); */
+      msg.react(🍰);
+      msg.react(🍰);
     });
 
     //bot.user.lastMessage.react(':thumbsup:');
