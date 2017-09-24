@@ -10,8 +10,8 @@ module.exports = {
       .setFooter('Polls')
       .setTimestamp();
     message.channel.send({embed}).then(msg => {
-      let up = client.emojis.find("name", "thumbsup");
-      let down = client.emojis.find("name", "thumbsdown");
+      let up = bot.emojis.find("name", "thumbsup");
+      let down = bot.emojis.find("name", "thumbsdown");
       msg.react(up.id);
       msg.react(down.id);
     });
