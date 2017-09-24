@@ -5,7 +5,8 @@ module.exports = {
     //message.delete();
     if (message.member.roles.some(r=>[conf['admin-role']].includes(r.name)) === false) {return;}
 
-    let question=''; for (r=1; r <= option.length; r++) {poll_question += option[r]}
+    console.log(option)
+
     let embed = new discord.RichEmbed()
       .setColor('#8600AE')
       .setDescription(question)
