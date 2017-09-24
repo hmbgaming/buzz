@@ -12,7 +12,7 @@ module.exports = {
     message.channel.send({embed}).then(msg => {
       let up = bot.emojis.find("name", "thumbsup");
       let down = bot.emojis.find("name", "thumbsdown");
-      console.log(up);
+      console.log(bot.emojis);
 
       /*
       msg.react(up.id);
