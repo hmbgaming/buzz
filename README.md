@@ -1,6 +1,5 @@
 - admin
   - `!uptime`  ; return how long bot has been running.
-  - `!sync`    ; syncs group roles from conf.json.
 - group notification
   - `join`
   - `leave`
@@ -10,4 +9,4 @@
   - `!poll`    ; create a pinned poll with reactions within a channel.
 - game deals
 - game trailers
-- rules 
+- rules

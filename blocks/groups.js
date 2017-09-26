@@ -14,7 +14,8 @@ function help(conf, message, discord) {
 
 function join(conf, message, intent, value) {
   let server_role = message.guild.roles.find("name", value);
-  if (server_role === null || conf['exclude-roles'].indexOf(value) === 0) {return}
+  if (server_role === null) {return}
+  if (message.member.roles.has(server_role.id) === true) {return}
 
   message.member.addRole(server_role);
   var embed = {embed: {color: 3447003, title: 'You have joined ' + value + '!',}}
@@ -23,7 +24,7 @@ function join(conf, message, intent, value) {
 
 function quit(conf, message, intent, value) {
   let server_role = message.guild.roles.find("name", value);
-  if (server_role === null || conf['exclude-roles'].indexOf(value) === 0) {return}
+  if (server_role === null) {return}
   if (message.member.roles.has(server_role.id) === false) {return}
 
   message.member.removeRole(server_role);
