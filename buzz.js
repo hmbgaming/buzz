@@ -26,7 +26,7 @@ const help_fallback = new discord.RichEmbed()
   .setThumbnail("https://cdn2.iconfinder.com/data/icons/helmet/512/warrior-soldier-helmet-war-512.png")
   .setTimestamp()
   .setFooter("Buzz")
-  .setDescription("*Salutaions! My name is Buzz, I'm here to assist you. Below are several of the services I offer! I also tell great jokes!*")
+  .setDescription("*Salutations! My name is Buzz, I'm here to assist you. Below are several of the services I offer! I also tell great jokes!*")
   .addField('Group Notifications','You can *join* roles to recieve game specific messages no matter what channel they are in! Ask me about it to get started!')
   .addField('Leveling','As you communicate with your peers you will accumulate experience, as you level up you will be rewarded with new roles & privileges')
   .addField('Channel Polls','Make sure to check a channels pinned messages for the current polls going on!');

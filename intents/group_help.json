@@ -1,5 +1,7 @@
 {
   "templates": [
+    "what are the groups available",
+    "what are groups",
     "game roles?",
     "how do i use groups",
     "how do i use group notifications",
@@ -12,6 +14,26 @@
     "how do groups work"
   ],
   "userSays": [
+    {
+      "id": "5ab889b0-bbfa-415c-8692-925595d5d552",
+      "data": [
+        {
+          "text": "what are the groups available"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "bbd59ac9-7694-44e7-8d71-8054d8881c2f",
+      "data": [
+        {
+          "text": "what are groups"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
     {
       "id": "9a8bf8d6-efe8-4276-9126-f6f725998d76",
       "data": [

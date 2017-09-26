@@ -4,15 +4,16 @@
   "isOverridable": true,
   "entries": [
     {
-      "value": "World of Warcraft",
+      "value": "WoW - TBC",
       "synonyms": [
         "World of Warcraft",
         "wow",
-        "world of warcraft"
+        "world of warcraft",
+        "the burning crusade"
       ]
     },
     {
-      "value": "Guild Wars 2",
+      "value": "GW2",
       "synonyms": [
         "Guild Wars 2",
         "guild wars 2",
@@ -36,7 +37,7 @@
       ]
     },
     {
-      "value": "Playerunknown's Battlegrounds",
+      "value": "PUBG",
       "synonyms": [
         "Playerunknown's Battlegrounds",
         "playerunknown",
@@ -58,7 +59,7 @@
       ]
     },
     {
-      "value": "Final Fantasy XIV",
+      "value": "FFXIV",
       "synonyms": [
         "Final Fantasy XIV",
         "final fantasy XIV",
@@ -87,10 +88,19 @@
       ]
     },
     {
-      "value": "Destiny 2",
+      "value": "Podcast",
       "synonyms": [
-        "Destiny 2",
-        "destiny 2"
+        "Podcast",
+        "podcast"
+      ]
+    },
+    {
+      "value": "Starcraft II",
+      "synonyms": [
+        "Starcraft II",
+        "Starcraft 2",
+        "starcraft 2",
+        "starcraft II"
       ]
     }
   ],

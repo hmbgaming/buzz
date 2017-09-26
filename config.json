@@ -3,16 +3,19 @@
   "api-ai-token": "api-token",
   "admin-role": "buzz admin",
 
-  "game-deal-channel": "testing",
-  "game-trailer-channel": "testing",
+  "game-deal-channel": "deals",
+  "game-trailer-channel": "trailers",
   "release-channel": "testing",
 
   "group-color": "44b8fa",
   "exclude-roles": [
-    "Brewmasters"
+    "Bots", "Mee6", "GW2Bot",
+    "Brewmasters", "Barkeeps", "Brewers", "temp admin", "buzz admin",
+    "Mythic", "Legendary", "Epic", "Patreon",
+    "Emojis", "Members", "Deals", "Memes", "Nickname", "Deafen", "Mute", "Reactions"
   ],
   "group_roles": [
-    "World of Warcraft",
+    "World of Warcraft: The Burning Crusade",
     "Guild Wars 2",
     "Hearthstone",
     "League of Legends",
@@ -23,24 +26,20 @@
     "Clash Royale",
     "Battle Bay",
     "Minecraft",
-    "Destiny 2"
+    "Starcraft II",
+    "Podcast"
   ],
 
   "level-cap": 30,
   "level-ranks": {
-    "reactions-rank": 5,
-    "mute-members-rank": 6,
-    "deafen-members-rank": 7,
-    "change-your-nickname-rank": 8,
-    "memes-chat-rank": 9,
-    "2x-voting-power-rank": 10,
-    "deals-chat-rank": 11,
-    "members-role-rank": 12,
-    "custom-emoji-rank": 13,
-    "gotm-submissions-rank": 14,
-    "x5-voting-power-rank": 15,
-    "vip-chat-rank": 16,
-    "hmb-swag-rank": 20
+    "Reactions": 5,
+    "Mute": 6,
+    "Deafen": 7,
+    "Nickname": 8,
+    "Memes": 9,
+    "Deals": 11,
+    "Members": 12,
+    "Emojis": 13
   },
 
   "daily-key-release": ""

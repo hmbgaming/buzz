@@ -1,4 +1,4 @@
-function reddit_search(bot, reddit_client, sub_reddit, display_name, discord, conf, color) {
+function reddit_search(bot, reddit_client, sub_reddit, display_name, discord, channel, color) {
   reddit_client.watcher.getPostWatcher(sub_reddit)
     .on('post', function(post) {
       let embed = new discord.RichEmbed()
@@ -8,7 +8,7 @@ function reddit_search(bot, reddit_client, sub_reddit, display_name, discord, co
         .setFooter(display_name)
         .setTimestamp()
         .setURL(post.data.url);
-      bot.channels.find('name', conf['game-deal-channel']).send({embed}); return
+      bot.channels.find('name', channel).send({embed}); return
     })
     .on('error', console.error)
 }
@@ -24,7 +24,7 @@ module.exports = {
       automatic_retries: true,
       api_requests_per_minuite: 10
     });
-    reddit_search(bot, reddit_client, 'gametrailers', 'Game Trailers', discord, conf, '#0086AE');
-    reddit_search(bot, reddit_client, 'GameDeals', 'Game Deals', discord, conf, '#AE8600');
+    reddit_search(bot, reddit_client, 'gametrailers', 'Game Trailers', discord, conf['game-trailer-channel'], '#0086AE');
+    reddit_search(bot, reddit_client, 'GameDeals', 'Game Deals', discord, conf['game-deal-channel'], '#AE8600');
   }
 }
