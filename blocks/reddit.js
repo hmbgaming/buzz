@@ -8,7 +8,9 @@ function reddit_search(bot, reddit_client, sub_reddit, display_name, discord, ch
         .setFooter(display_name)
         .setTimestamp()
         .setURL(post.data.url);
-      bot.channels.find('name', channel).send({embed}); return
+      if (post.kind === 't3'{
+        bot.channels.find('name', channel).send({embed}); return
+      }
     })
     .on('error', console.error)
 }
