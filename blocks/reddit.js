@@ -20,7 +20,7 @@ module.exports = {
       automatic_retries: true,
       api_requests_per_minuite: 10
     });
-    reddit_search(bot, reddit_client, 'popular', conf['game-trailer-channel']);
+    reddit_search(bot, reddit_client, 'gametrailers', conf['game-trailer-channel']);
     reddit_search(bot, reddit_client, 'GameDeals', conf['game-deal-channel']);
   }
 }
