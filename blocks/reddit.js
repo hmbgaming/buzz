@@ -1,7 +1,7 @@
 function reddit_search(bot, reddit_client, sub_reddit, channel) {
   reddit_client.watcher.getPostWatcher(sub_reddit)
     .on('post', function(post) {
-      if (post.kind === 't3' && post.data.title && post.data.url) {
+      if (post.kind === 't3') {
         let message = '**'+post.data.title +'**/n*'+ post.data.url+'*';
         bot.channels.find('name', channel).send(message); return
       }
