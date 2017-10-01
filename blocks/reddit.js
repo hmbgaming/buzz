@@ -10,7 +10,7 @@ function reddit_search(bot, reddit_client, sub_reddit, channel) {
 }
 
 module.exports = {
-  handler: (bot, reddit, discord, conf) => {
+  handler: (bot, reddit, conf) => {
     let reddit_client = new reddit({
       username: process.env.REDDIT_USERNAME,
       password: process.env.REDDIT_PASSWORD,
