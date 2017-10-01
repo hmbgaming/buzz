@@ -1,11 +1,11 @@
 # Buzz
-- *airbrake* [![npm version](https://badge.fury.io/js/airbrake.svg)](https://badge.fury.io/js/airbrake)
-- *apiai* [![npm version](https://badge.fury.io/js/apiai.svg)](https://badge.fury.io/js/apiai)
-- *discord.js* [![npm version](https://badge.fury.io/js/discord.js.svg)](https://badge.fury.io/js/discord.js)
-- *moment* [![npm version](https://badge.fury.io/js/moment.svg)](https://badge.fury.io/js/moment)
-- *mongodb* [![npm version](https://badge.fury.io/js/mongodb.svg)](https://badge.fury.io/js/mongodb)
-- *node-schedule* [![npm version](https://badge.fury.io/js/node-schedule.svg)](https://badge.fury.io/js/node-schedule)
-- *reddit-snooper* [![npm version](https://badge.fury.io/js/reddit-snooper.svg)](https://badge.fury.io/js/reddit-snooper)
+- [![npm version](https://badge.fury.io/js/airbrake.svg)](https://badge.fury.io/js/airbrake) *airbrake* 
+- [![npm version](https://badge.fury.io/js/apiai.svg)](https://badge.fury.io/js/apiai) *apiai* 
+- [![npm version](https://badge.fury.io/js/discord.js.svg)](https://badge.fury.io/js/discord.js) *discord.js*
+- [![npm version](https://badge.fury.io/js/moment.svg)](https://badge.fury.io/js/moment) *moment*
+- [![npm version](https://badge.fury.io/js/mongodb.svg)](https://badge.fury.io/js/mongodb) *mongodb*
+- [![npm version](https://badge.fury.io/js/node-schedule.svg)](https://badge.fury.io/js/node-schedule) *node-schedule*
+- [![npm version](https://badge.fury.io/js/reddit-snooper.svg)](https://badge.fury.io/js/reddit-snooper) *reddit-snooper*
 
 ## Setup
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
