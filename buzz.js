@@ -41,7 +41,7 @@ airbrake.addFilter(function(notice) {
   notice.context.version = '1.0.4';
   return notice;
 });
-airbrake.handleExceptions();
+//airbrake.handleExceptions();
 
 function handler(message) {
   let request = ai.textRequest(message.content, {sessionId: message.author.username});
