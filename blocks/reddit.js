@@ -1,20 +1,10 @@
-function reddit_search(bot, reddit_client, sub_reddit, display_name, discord, channel, color) {
+function reddit_search(bot, reddit_client, sub_reddit, channel) {
   reddit_client.watcher.getPostWatcher(sub_reddit)
     .on('post', function(post) {
-      console.log(post);
-      process.exit();
-      /*
-      let embed = new discord.RichEmbed()
-        .setColor(color)
-        .setTitle(display_name)
-        .setDescription(post.data.title)
-        .setFooter(display_name)
-        .setTimestamp()
-        .setURL(post.data.url);
+      let message = `**${post.data.title}**\n*link: ${post.data.url}*`
       if (post.kind === 't3') {
-        bot.channels.find('name', channel).send({embed}); return
+        bot.channels.find('name', channel).send(message); return
       }
-      */
     })
     .on('error', console.error)
 }
@@ -30,7 +20,7 @@ module.exports = {
       automatic_retries: true,
       api_requests_per_minuite: 10
     });
-    reddit_search(bot, reddit_client, 'gametrailers', 'Game Trailers', discord, conf['game-trailer-channel'], '#0086AE');
-    reddit_search(bot, reddit_client, 'GameDeals', 'Game Deals', discord, conf['game-deal-channel'], '#AE8600');
+    reddit_search(bot, reddit_client, 'popular', conf['game-trailer-channel']);
+    reddit_search(bot, reddit_client, 'GameDeals', conf['game-deal-channel']);
   }
 }
