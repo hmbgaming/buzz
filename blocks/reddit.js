@@ -1,9 +1,6 @@
 function reddit_search(bot, reddit_client, sub_reddit, display_name, discord, channel, color) {
   reddit_client.watcher.getPostWatcher(sub_reddit)
     .on('post', function(post) {
-      console.log(post);
-
-      /*
       let embed = new discord.RichEmbed()
         .setColor(color)
         .setTitle(display_name)
@@ -14,7 +11,6 @@ function reddit_search(bot, reddit_client, sub_reddit, display_name, discord, ch
       if (post.kind === 't3') {
         bot.channels.find('name', channel).send({embed}); return
       }
-      */
     })
     .on('error', console.error)
 }
