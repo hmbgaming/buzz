@@ -1,5 +1,5 @@
 function reddit_search(bot, reddit_client, sub_reddit, display_name, discord, channel, color) {
-  reddit_client.watcher.getPostWatcher('popular')
+  reddit_client.watcher.getPostWatcher(sub_reddit)
     .on('post', function(post) {
       console.log(post);
       process.exit();
