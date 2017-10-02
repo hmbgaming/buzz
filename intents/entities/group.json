@@ -1,0 +1,109 @@
+{
+  "id": "9b921586-dbdc-47df-a129-7a62c13dcb81",
+  "name": "group",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "WoW - TBC",
+      "synonyms": [
+        "World of Warcraft",
+        "wow",
+        "world of warcraft",
+        "the burning crusade"
+      ]
+    },
+    {
+      "value": "GW2",
+      "synonyms": [
+        "Guild Wars 2",
+        "guild wars 2",
+        "gw2"
+      ]
+    },
+    {
+      "value": "Hearthstone",
+      "synonyms": [
+        "Hearthstone",
+        "hearthstone"
+      ]
+    },
+    {
+      "value": "League of Legends",
+      "synonyms": [
+        "League of Legends",
+        "lol",
+        "LoL",
+        "league of legends"
+      ]
+    },
+    {
+      "value": "PUBG",
+      "synonyms": [
+        "Playerunknown's Battlegrounds",
+        "playerunknown",
+        "pubg"
+      ]
+    },
+    {
+      "value": "Rust",
+      "synonyms": [
+        "Rust",
+        "rust"
+      ]
+    },
+    {
+      "value": "Vainglory",
+      "synonyms": [
+        "Vainglory",
+        "vainglory"
+      ]
+    },
+    {
+      "value": "FFXIV",
+      "synonyms": [
+        "Final Fantasy XIV",
+        "final fantasy XIV",
+        "ffxiv"
+      ]
+    },
+    {
+      "value": "Clash Royale",
+      "synonyms": [
+        "Clash Royale",
+        "clash royale"
+      ]
+    },
+    {
+      "value": "Battle Bay",
+      "synonyms": [
+        "Battle Bay",
+        "battle bay"
+      ]
+    },
+    {
+      "value": "Minecraft",
+      "synonyms": [
+        "Minecraft",
+        "minecraft"
+      ]
+    },
+    {
+      "value": "Podcast",
+      "synonyms": [
+        "Podcast",
+        "podcast"
+      ]
+    },
+    {
+      "value": "Starcraft II",
+      "synonyms": [
+        "Starcraft II",
+        "Starcraft 2",
+        "starcraft 2",
+        "starcraft II"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": false
+}

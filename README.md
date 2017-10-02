@@ -1,52 +1,69 @@
-
-
-
-
-
 # Buzz
 
-> Holdmybeer Discord Bot
+## Setup
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-##### Run Locally
-1. Clone repository
-2. `npm install`
-3. Configure `conf.json` & create `buzzwords.json`
-4. Setup bot permissions & add to server `https://discordapi.com/permissions.html`
-5. `node buzz`
+1. Upload `intents` & `entities` to api.ai
 
-##### available buzzBlocks
-- Game-Specific Roles
-  - [x] *join role.*
-  - [x] *quit role.*
-  - [x] *create role.*
-  - [ ] *delete role.*
+2. Configure Environment Variables
+   * `AIRBRAKE_API_KEY`
+   * `AIRBRAKE_PROJECT_ID`
+   * `APIAI_TOKEN`
+   * `DISCORD_TOKEN`
+   * `MONGODB_URI`
+   * `REDDIT_ID`
+   * `REDDIT_SECRET`
+   * `REDDIT_USERNAME`
+   * `REDDIT_PASSWORD`
 
-###### conf.json
+3. Configure `config.json` (if deploying to heroku, add config values to server)
 ```json
 {
-  "discord-token": "discord-api-token",
-     "admin-role": "admin",
+  "admin-role": "buzz admin",
 
-     "game-role": true,
-     "game-role-color": "0xFF0000"
-}
-```
-###### buzzwords.json
-```json
-{
-
-  "rules": [
-    "All community members are expected to abide by the follow:",
-    "1. Treat others with respect. Banter is fun, bullying is not. Make sure all parties are on the same page when it comes to communicating. This includes both text and voice chats.",
-    "2. Do not spam any channel with nonsense.",
-    "3. No advertising. If you have an event, or something you would like to promote, please talk to a member of leadership to get permission.",
-    "4. Leave all hate, racism, derogatory terms, and offensive comments out of our community."
+  "game-deal-channel": "deals",
+  "game-trailer-channel": "trailers",
+  
+  "group_roles": [
+    "World of Warcraft: The Burning Crusade",
+    "Guild Wars 2",
+    "Hearthstone",
+    "League of Legends",
+    "Playerunknown's Battlegrounds",
+    "Rust",
+    "Vainglory",
+    "Final Fantasy XIV",
+    "Clash Royale",
+    "Battle Bay",
+    "Minecraft",
+    "Starcraft II",
+    "Podcast"
   ],
 
-  "beer": [
-    "I love beer so much!"
-  ]
-
+  "level-cap": 30,
+  "level-ranks": {
+    "Reactions": 5,
+    "Mute": 6,
+    "Deafen": 7,
+    "Nickname": 8,
+    "Memes": 9,
+    "Deals": 11,
+    "Members": 12,
+    "Emojis": 13
+  }
 }
-
 ```
+
+## Available
+- admin
+  * `!uptime`  ; return how long bot has been running.
+- group notification
+  * `join`
+  * `leave`
+  * `help`
+- leveling
+- community polling
+  * `!poll`    ; create a pinned poll with reactions within a channel.
+- game deals
+- game trailers
+- rules

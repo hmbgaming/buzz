@@ -1,14 +1,28 @@
 {
   "name": "buzz",
-  "version": "1.0.0",
-  "description": "Hold My Beer Discord Bot",
+  "version": "1.0.5",
+  "description": "",
   "main": "buzz.js",
   "scripts": {
-    "start": "node buzz"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Softban",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/softban/buzz.git"
+  },
+  "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/softban/buzz/issues"
+  },
+  "homepage": "https://github.com/softban/buzz#readme",
   "dependencies": {
-    "discord.js": "^11.2.1"
+    "airbrake": "^2.1.0",
+    "apiai": "^4.0.3",
+    "discord.js": "^11.2.1",
+    "moment": "^2.18.1",
+    "mongodb": "^2.2.31",
+    "node-schedule": "^1.2.5",
+    "reddit-snooper": "^1.0.1"
   }
 }

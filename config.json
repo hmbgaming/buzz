@@ -1,12 +1,40 @@
 {
-  "discord-token":"api-token",
+  "discord-token": "api-token",
+  "api-ai-token": "api-token",
   "admin-role": "buzz admin",
 
+  "game-deal-channel": "deals",
+  "game-trailer-channel": "trailers",
+  "release-channel": "testing",
 
-  "game-role": true,
-  "game-role-color": "0xFF0000",
-  "exclude-roles": [
-    "Angry Birds"
-  ]
+  "group_roles": [
+    "World of Warcraft: The Burning Crusade",
+    "Guild Wars 2",
+    "Hearthstone",
+    "League of Legends",
+    "Playerunknown's Battlegrounds",
+    "Rust",
+    "Vainglory",
+    "Final Fantasy XIV",
+    "Clash Royale",
+    "Battle Bay",
+    "Minecraft",
+    "Starcraft II",
+    "Podcast"
+  ],
+
+  "level-cap": 30,
+  "level-ranks": {
+    "Reactions": 5,
+    "Mute": 6,
+    "Deafen": 7,
+    "Nickname": 8,
+    "Memes": 9,
+    "Deals": 11,
+    "Members": 12,
+    "Emojis": 13
+  },
+
+  "daily-key-release": ""
 
 }

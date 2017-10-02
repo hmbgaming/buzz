@@ -1,0 +1,165 @@
+{
+  "templates": [
+    "good moring",
+    "good afternoon",
+    "hello",
+    "aloha",
+    "greetings",
+    "G'day mate",
+    "Hiya",
+    "Howdy",
+    "Yo",
+    "Hi",
+    "Hey man",
+    "Hey"
+  ],
+  "userSays": [
+    {
+      "id": "aaccf744-d42e-4019-8010-c2c528ec4db0",
+      "data": [
+        {
+          "text": "good moring"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "67c8ce3c-a0da-413c-96d3-4695c44ec7fa",
+      "data": [
+        {
+          "text": "good afternoon"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "1543dc1e-c463-45dd-a15c-44208bfcf3f4",
+      "data": [
+        {
+          "text": "hello"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "230fe74a-5ba8-4864-89f4-9d91e0f8547c",
+      "data": [
+        {
+          "text": "aloha"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "57d0481e-6078-4d94-9c26-1254aca9b0fa",
+      "data": [
+        {
+          "text": "greetings"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "c0359642-2a94-4c50-ab7a-4e8309717505",
+      "data": [
+        {
+          "text": "G'day mate"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "9eb0680f-47a7-4897-912c-22c84b4d9286",
+      "data": [
+        {
+          "text": "Hiya"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "f320d5ff-dab9-4f92-bc8a-8c1e831f1a1b",
+      "data": [
+        {
+          "text": "Howdy"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "c170d564-cf80-4a56-bc36-c9450f87ffdc",
+      "data": [
+        {
+          "text": "Yo"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "9d83dc6d-a096-4e23-8cf8-e9c43ceef73a",
+      "data": [
+        {
+          "text": "Hi"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "29eaf237-8a09-4adb-b08f-26488b1a7a0e",
+      "data": [
+        {
+          "text": "Hey man"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "320297f2-d4b1-4d10-990d-6509c8e961f2",
+      "data": [
+        {
+          "text": "Hey"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "2a333f04-f378-4717-86db-4dbd35040ebe",
+  "name": "Introductions",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "Salutations!"
+        }
+      ],
+      "defaultResponsePlatforms": {}
+    }
+  ],
+  "priority": 500000,
+  "cortanaCommand": {
+    "navigateOrService": "NAVIGATE",
+    "target": ""
+  },
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}
