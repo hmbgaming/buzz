@@ -53,7 +53,7 @@
   }
 }
 ```
----
+
 ## Available
 - admin
   * `!uptime`  ; return how long bot has been running.
